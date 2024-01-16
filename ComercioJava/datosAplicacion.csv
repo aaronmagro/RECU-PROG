@@ -1,0 +1,396 @@
+products,,,,,,
+food_name,scientific_name,group,sub_group,kcal,price,expiration
+Velvet duck,Melanitta fusca,Animal foods,Poultry,"650,4","9,42",
+Mallard duck,Anas platyrhynchos,Animal foods,Poultry,"873,74","7,9",
+Pheasant,Phasianus colchicus,Animal foods,Poultry,"152,83","0,42",
+Quail,Phasianidae,Animal foods,Poultry,"909,53","0,29",
+Black bear,Ursus americanus,Animal foods,Other mammals,"799,85","9,52",
+Polar bear,Ursus maritimus,Animal foods,Other mammals,"298,79","2,42",
+Caribou,Rangifer tarandus,Animal foods,Venison,"231,14","6,15",
+European rabbit,Oryctolagus,Animal foods,Lagomorphs,"39,17","4,15",
+Raccoon,Procyon lotor,Animal foods,Other mammals,"324,91","6,99",
+Beefalo,Bos taurus X Bison bison,Animal foods,Bovines,"570,24","9,02",
+Rock ptarmigan,Lagopus muta,Animal foods,Poultry,"7,23","7,82",
+Mule deer,Odocoileus,Animal foods,Venison,"592,99","8,28",
+Antelope,Artiodactyla,Animal foods,Venison,"466,93","8,67",
+Mountain hare,Lepus timidus,Animal foods,Lagomorphs,"410,34","0,88",
+Turkey,Meleagris gallopavo,Animal foods,Poultry,"127,49","5,51",
+Elk,Cervus canadensis,Animal foods,Venison,"884,24","7,11",
+Emu,Dromaius novaehollandiae,Animal foods,Poultry,"85,23","2,15",
+Beaver,Castor canadensis,Animal foods,Rodents,"443,29","1,1",
+Deer,Cervidae,Animal foods,Venison,"245,48","5,91",
+Chicken (Cock; Hen; Rooster),Gallus gallus,Animal foods,Poultry,"878,72","7,29",
+Wild boar,Sus scrofa,Animal foods,Swine,"879,07","6,59",
+Cattle (Beef; Veal),Bos taurus,Animal foods,Bovines,"794,99","1,35",
+Arctic ground squirrel,Urocitellus parryii,Animal foods,Rodents,"413,43","1,9",
+Animal foods,NULL,Animal foods,Animal foods,"72,32","5,02",
+Moose,Alces alces,Animal foods,Venison,"920,83","4,24",
+Domestic pig (Piglet; Pork),Sus scrofa domestica,Animal foods,Swine,"710,25","3,61",
+Rabbit,Leporidae,Animal foods,Lagomorphs,"946,07","5,55",
+Muskrat,Ondatra zibethicus,Animal foods,Rodents,"434,18","1,53",
+Brown bear,Ursus arctos,Animal foods,Other mammals,"583,49","3,33",
+Buffalo,Bubalus bubalis,Animal foods,Bovines,"721,51","3,65",
+Greylag goose,Anser anser,Animal foods,Poultry,"470,43","3,64",
+Domestic goat,Capra aegagrus hircus,Animal foods,Caprae,"252,88","2,52",
+Columbidae (Dove; Pigeon),Columbidae,Animal foods,Poultry,861,"0,2",
+Sheep (Mutton; Lamb),Ovis aries,Animal foods,Ovis,"915,08","6,8",
+Great horned owl,Bubo virginianus,Animal foods,Poultry,"388,5","1,32",
+Guinea hen,Numida meleagris,Animal foods,Poultry,"990,31","8,22",
+Opossum,Didelphis virginiana,Animal foods,Marsupials,"938,22","0,06",
+Ostrich,Struthio camelus,Animal foods,Poultry,"831,9","0,72",
+Squab,Columba,Animal foods,Poultry,"791,35","1,84",
+Squirrel,Sciuridae,Animal foods,Rodents,"301,6","3,71",
+Other meat product,NULL,Animal foods,Meat products,"591,34","0,03",
+Anatidae (Duck; Goose; Swan),Anatidae,Animal foods,Poultry,862,"4,15",
+Horse,Equus caballus,Animal foods,Equines,"507,92","4,31",
+Bison,Bison bison,Animal foods,Bovines,"687,86","6,1",
+Spot croaker,Leiostomus xanthurus,Aquatic foods,Fishes,"396,11","2,57",
+Atlantic menhaden,Brevoortia tyrannus,Aquatic foods,Fishes,"191,18","8,84",
+Cuttlefish,Sepiidae,Aquatic foods,Mollusks,"114,19","1,92",
+Jellyfish,Scyphozoa,Aquatic foods,Other aquatic foods,"786,11","9,41",
+Anchovy,Engraulidae,Aquatic foods,Fishes,"840,42","1,54",
+Blue whiting,Micromesistius poutassou,Aquatic foods,Fishes,"258,76","7,04",
+Carp bream,Abramis brama,Aquatic foods,Fishes,"415,05","0,17",
+Devilfish,Myoxocephalus,Aquatic foods,Fishes,"52,62","6,72",
+Sturgeon,Acipenseridae,Aquatic foods,Fishes,"972,42","0,9",
+Charr,Salvelinus,Aquatic foods,Fishes,"664,86","7,6",
+Crab,Brachyura,Aquatic foods,Crustaceans,"126,96","3,55",
+Common dab,Limanda limanda,Aquatic foods,Fishes,"36,97","5,99",
+Spiny dogfish,Squalus acanthias,Aquatic foods,Fishes,"896,08","7,87",
+Anguilliformes (Eel),Anguilliformes,Aquatic foods,Fishes,"430,35","6,7",
+True frog,Ranidae,Aquatic foods,Amphibians,"271,07","4,11",
+Garfish,Belone belone,Aquatic foods,Fishes,"851,6","3,88",
+Gadiformes (Cod; Hake),Gadiformes,Aquatic foods,Fishes,"568,41","2,46",
+Lake trout,Salvelinus namaycush,Aquatic foods,Fishes,"468,19","1,32",
+Lemon sole,Microstomus kitt,Aquatic foods,Fishes,"76,66","7,68",
+Clawed lobster,Nephropidae,Aquatic foods,Crustaceans,"140,95","0,35",
+Lumpsucker,Cyclopteridae,Aquatic foods,Fishes,"734,29","2,24",
+Scombridae (Bonito; Mackerel; Tuna),Scombridae,Aquatic foods,Fishes,"617,66","1,76",
+Marine mussel,Mytilidae,Aquatic foods,Mollusks,"364,66","1,01",
+Norway haddock,Sebastes viviparus,Aquatic foods,Fishes,"969,95","2,94",
+Norway lobster,Nephrops norvegicus,Aquatic foods,Crustaceans,"821,29","4,35",
+Norway pout,Trisopterus esmarkii,Aquatic foods,Fishes,"211,32","9,39",
+True oyster,Ostreidae,Aquatic foods,Mollusks,"316,83","1,5",
+Pikeperch,Sander lucioperca,Aquatic foods,Fishes,"687,34","4,4",
+Pleuronectidae (Dab; Halibut; Plaice),Pleuronectidae,Aquatic foods,Fishes,"681,6","8,3",
+Pacific ocean perch,Sebastes alutus,Aquatic foods,Fishes,"924,55","0,72",
+Dolphin fish,Coryphaena hippurus,Aquatic foods,Fishes,"536,33","1,18",
+True seal,Phocidae,Aquatic foods,Pinnipeds,"591,23","0,61",
+Red algae,Rhodophyta,Aquatic foods,Seaweed,"981,72","5,85",
+Kombu,Saccharina japonica,Aquatic foods,Seaweed,"284,56","7,97",
+Snail,Gastropoda,Aquatic foods,Mollusks,"954,88","2,79",
+True sole,Soleidae,Aquatic foods,Fishes,"826,81","0,16",
+Catfish,Siluriformes,Aquatic foods,Fishes,"854,99","2,15",
+Freshwater drum,Aplodinotus grunniens,Aquatic foods,Fishes,"27,83",6,
+Thunnus (Common tuna),Thunnus,Aquatic foods,Fishes,"427,9","4,13",
+Cetacea (Dolphin; Porpoise; Whale),Cetacea,Aquatic foods,Cetaceans,"152,83","5,89",
+Conch,Strombidae,Aquatic foods,Mollusks,"114,46","0,93",
+Other fish product,NULL,Aquatic foods,Fish products,"193,07","0,98",
+Roe,NULL,Aquatic foods,Roe,"204,09","0,02",
+Cichlidae (Tilapia),Cichlidae,Aquatic foods,Fishes,"849,18","4,47",
+Green turtle,Chelonia mydas,Aquatic foods,Other aquatic foods,"550,25","4,7",
+Dungeness crab,Cancer magister,Aquatic foods,Crustaceans,"177,48","2,07",
+Eastern oyster,Crassostrea virginica,Aquatic foods,Mollusks,"451,88","8,49",
+Freshwater eel,Anguilla,Aquatic foods,Fishes,"499,1","9,25",
+Ascidians,Ascidiacea,Aquatic foods,Other aquatic foods,"543,44","9,75",
+European anchovy,Engraulis encrasicolus,Aquatic foods,Fishes,"626,72","9,12",
+Turbot,Scophthalmus maximus,Aquatic foods,Fishes,"178,25","1,94",
+Crustaceans,NULL,Aquatic foods,Crustaceans,"115,51","9,25",
+Fishes,NULL,Aquatic foods,Fishes,"7,66","9,6",
+Mollusks,NULL,Aquatic foods,Mollusks,"262,57","6,46",
+Florida pompano,Trachinotus carolinus,Aquatic foods,Fishes,"10,43","3,61",
+Greenland halibut/turbot,Reinhardtius hippoglossoides,Aquatic foods,Fishes,"946,15","7,41",
+Beluga whale,Delphinapterus leucas,Aquatic foods,Cetaceans,"813,83","8,64",
+Grouper,Epinephelus,Aquatic foods,Fishes,"263,3","1,52",
+Haddock,Melanogrammus aeglefinus,Aquatic foods,Fishes,"716,27","7,58",
+Hippoglossus (Common halibut),Hippoglossus,Aquatic foods,Fishes,"796,14","0,25",
+Irish moss,Chondrus crispus,Aquatic foods,Seaweed,"337,2","3,53",
+Pacific jack mackerel,Trachurus symmetricus,Aquatic foods,Fishes,"419,94","2,43",
+Alaska blackfish,Dallia pectoralis,Aquatic foods,Fishes,"741,57","9,25",
+Blue crab,Callinectes sapidus,Aquatic foods,Crustaceans,"408,98","2,06",
+Kelp,Laminaria,Aquatic foods,Seaweed,"37,95","0,27",
+King mackerel,Scomberomorus cavalla,Aquatic foods,Fishes,"430,36","7,61",
+Blue mussel,Mytilus edulis,Aquatic foods,Mollusks,"242,72","5,91",
+Leather chiton,Katharina tunicata,Aquatic foods,Mollusks,"564,22","8,24",
+Northern bluefin tuna,Thunnus thynnus,Aquatic foods,Fishes,"147,32","1,58",
+Common ling,Molva molva,Aquatic foods,Fishes,"138,86","0,36",
+Lingcod,Ophiodon elongatus,Aquatic foods,Fishes,"15,94","3,89",
+American lobster,Homarus americanus,Aquatic foods,Crustaceans,"944,47","8,7",
+Bluefish,Pomatomus saltatrix,Aquatic foods,Fishes,"661,94","0,59",
+Bowhead whale,Balaena mysticetus,Aquatic foods,Cetaceans,"837,93","9,24",
+Milkfish,Chanos chanos,Aquatic foods,Fishes,"939,28","3,42",
+Monkfish,Lophius piscatorius,Aquatic foods,Fishes,"409,94","7,75",
+Abalone,Haliotis,Aquatic foods,Mollusks,"589,52","9,51",
+Striped mullet,Mugil cephalus,Aquatic foods,Fishes,"996,66","4,17",
+Burbot,Lota lota,Aquatic foods,Fishes,"297,07","5,51",
+Ocean pout,Zoarces americanus,Aquatic foods,Fishes,"570,96","4,65",
+North Pacific giant octopus,Enteroctopus dofleini,Aquatic foods,Mollusks,"518,69","3,4",
+Agar,Eucheuma,Aquatic foods,Seaweed,"382,85","5,73",
+Tunicate,Tunicata,Aquatic foods,Other aquatic foods,"899,68","8,78",
+Spotted seal,Phoca largha,Aquatic foods,Pinnipeds,"448,22","4,43",
+Pacific herring,Clupea pallasii,Aquatic foods,Fishes,636,"9,48",
+Pacific oyster,Crassostrea gigas,Aquatic foods,Mollusks,"849,8","3,45",
+Pacific rockfish,Sebastes,Aquatic foods,Fishes,"630,85","5,03",
+American butterfish,Peprilus triacanthus,Aquatic foods,Fishes,"257,97","8,43",
+Northern pike,Esox lucius,Aquatic foods,Fishes,"409,19","7,39",
+Atlantic herring,Clupea harengus harengus,Aquatic foods,Fishes,"400,84","2,04",
+Rainbow smelt,Osmerus mordax,Aquatic foods,Fishes,"549,79","6,84",
+Rainbow trout,Oncorhynchus mykiss,Aquatic foods,Fishes,"591,18","2,98",
+Orange roughy,Hoplostethus atlanticus,Aquatic foods,Fishes,"52,93","0,77",
+Sablefish,Anoplopoma fimbria,Aquatic foods,Fishes,"548,15","0,61",
+Pink salmon,Oncorhynchus gorbuscha,Aquatic foods,Fishes,"442,77","2,63",
+Chum salmon,Oncorhynchus keta,Aquatic foods,Fishes,"606,22","1,98",
+Coho salmon,Oncorhynchus kisutch,Aquatic foods,Fishes,"425,25","3,87",
+Sockeye salmon,Oncorhynchus nerka,Aquatic foods,Fishes,"957,72","9,96",
+Chinook salmon,Oncorhynchus tshawytscha,Aquatic foods,Fishes,"130,05","8,54",
+Atlantic salmon,Salmo salar,Aquatic foods,Fishes,"101,45","9,02",
+Atlantic mackerel,Scomber scombrus,Aquatic foods,Fishes,"729,79","1,15",
+Spanish mackerel,Scomberomorus maculatus,Aquatic foods,Fishes,"14,21","0,92",
+Pacific sardine,Sardinops sagax,Aquatic foods,Fishes,"488,37","7,25",
+Scallop,Pectinidae,Aquatic foods,Mollusks,"397,41","7,18",
+Scup,Stenotomus chrysops,Aquatic foods,Fishes,"490,66","9,95",
+Sea cucumber,Parastichopus californicus,Aquatic foods,Other aquatic foods,"846,56","3,53",
+Steller sea lion,Eumetopias jubatus,Aquatic foods,Pinnipeds,"178,52","4,29",
+Bearded seal,Erignathus barbatus,Aquatic foods,Pinnipeds,"525,27","0,89",
+Ringed seal,Pusa hispida,Aquatic foods,Pinnipeds,"563,92","4,36",
+Seatrout,Cynoscion,Aquatic foods,Fishes,"125,93","0,87",
+Common carp,Cyprinus carpio,Aquatic foods,Fishes,"365,76","3,83",
+American shad,Alosa sapidissima,Aquatic foods,Fishes,"218,69","5,71",
+Shark,Squaliformes,Aquatic foods,Fishes,"94,32","7,58",
+Sheefish,Stenodus leucichthys,Aquatic foods,Fishes,"531,65","5,52",
+Sheepshead,Archosargus probatocephalus,Aquatic foods,Fishes,"700,3","1,88",
+Skipjack tuna,Katsuwonus pelamis,Aquatic foods,Fishes,"752,96","6,1",
+Snapper,Lutjanidae,Aquatic foods,Fishes,"907,54","0,08",
+Spirulina,Spirulina,Aquatic foods,Seaweed,"922,95","7,93",
+Greater sturgeon,Acipenser,Aquatic foods,Fishes,"188,84","7,89",
+White sucker,Catostomus commersonii,Aquatic foods,Fishes,"597,21","6,74",
+Pumpkinseed sunfish,Lepomis gibbosus,Aquatic foods,Fishes,"769,86","6,45",
+Swordfish,Xiphias gladius,Aquatic foods,Fishes,"345,59","2,66",
+Painted comber,Serranus scriba,Aquatic foods,Fishes,"977,26","1,53",
+Tilefish,Lopholatilus chamaeleonticeps,Aquatic foods,Fishes,"543,26","6,05",
+Channel catfish,Ictalurus punctatus,Aquatic foods,Fishes,"25,52","8,97",
+Salmonidae (Salmon; Trout),Salmonidae,Aquatic foods,Fishes,"638,31","0,42",
+Walleye,Sander vitreus,Aquatic foods,Fishes,"94,13","8,54",
+Alaska pollock,Theragra chalcogramma,Aquatic foods,Fishes,"368,16","6,42",
+Whelk,Buccinidae,Aquatic foods,Mollusks,"665,44","3,53",
+Coalfish pollock,Pollachius virens,Aquatic foods,Fishes,"608,26","7,34",
+Broad whitefish,Coregonus nasus,Aquatic foods,Fishes,635,"6,74",
+Whitefish,Coregonus,Aquatic foods,Fishes,"789,04","2,85",
+Whiting,Merlangius merlangus,Aquatic foods,Fishes,"762,11","4,04",
+Atlantic pollock,Pollachius pollachius,Aquatic foods,Fishes,"54,63","8,07",
+Atlantic wolffish,Anarhichas lupus,Aquatic foods,Fishes,"942,92","5,8",
+Yellowfin tuna,Thunnus albacares,Aquatic foods,Fishes,"661,66","2,24",
+Yellowtail amberjack,Seriola lalandi,Aquatic foods,Fishes,"369,93","9,86",
+Pollock,Pollachius,Aquatic foods,Fishes,"297,62","3,57",
+Albacore tuna,Thunnus alalunga,Aquatic foods,Fishes,"63,84","5,07",
+Gadus (Common cod),Gadus,Aquatic foods,Fishes,"612,25","7,92",
+Atlantic halibut,Hippoglossus hippoglossus,Aquatic foods,Fishes,"345,41","5,69",
+Pacific halibut,Hippoglossus stenolepis,Aquatic foods,Fishes,"74,8","4,5",
+Pacific salmon,Oncorhynchus,Aquatic foods,Fishes,"567,53","4,78",
+Smelt,Osmeridae,Aquatic foods,Fishes,"186,87","2,08",
+Clupeinae (Herring; Sardine; Sprat),Clupeinae,Aquatic foods,Fishes,"146,65","0,68",
+Spiny lobster,Palinuridae,Aquatic foods,Crustaceans,"165,54","0,21",
+Snow crab,Chionoecetes opilio,Aquatic foods,Crustaceans,"902,83","5,98",
+Percoidei (Bass and others),Percoidei,Aquatic foods,Fishes,"894,63","4,11",
+Perciformes (Perch-like fishes),Perciformes,Aquatic foods,Fishes,"717,81","7,67",
+Bivalvia (Clam; Mussel; Oyster),Bivalvia,Aquatic foods,Mollusks,"182,19","3,29",
+Squid,Teuthida,Aquatic foods,Mollusks,"891,09","9,66",
+Shrimp,Caridea,Aquatic foods,Crustaceans,"148,56","4,65",
+Crayfish,Astacidea,Aquatic foods,Crustaceans,"948,94","6,85",
+Flatfish,Pleuronectiformes,Aquatic foods,Fishes,"829,21","8,86",
+Walrus,Odobenus rosmarus,Aquatic foods,Pinnipeds,"119,11","9,59",
+Red king crab,Paralithodes camtschaticus,Aquatic foods,Crustaceans,"262,93","7,34",
+Cisco,Coregonus artedi,Aquatic foods,Fishes,"803,5","8,25",
+Nuttall cockle,Clinocardium nuttallii,Aquatic foods,Mollusks,"110,28","6,76",
+Pacific cod,Gadus macrocephalus,Aquatic foods,Fishes,"286,19","6,15",
+Purple laver,Porphyra laciniata,Aquatic foods,Seaweed,"852,01","5,02",
+Wakame,Undaria pinnatifida,Aquatic foods,Seaweed,"768,58",10,
+Atlantic cod,Gadus morhua,Aquatic foods,Fishes,"906,37","9,91",
+Common octopus,Octopus vulgaris,Aquatic foods,Mollusks,"301,73","7,46",
+Striped bass,Morone saxatilis,Aquatic foods,Fishes,"802,61","1,54",
+Atlantic croaker,Micropogonias undulatus,Aquatic foods,Fishes,"398,71","3,8",
+Cusk,Brosme brosme,Aquatic foods,Fishes,"124,3","7,45",
+Savoy cabbage,"Brassica oleracea var, sabauda",Vegetables,,"652,67","9,92",1
+Allium (Onion),Allium,Vegetables,,"490,91","9,86",84
+Garden onion,Allium cepa,Vegetables,,"637,42","4,77",4
+Leek,Allium porrum,Vegetables,,"133,21","5,98",15
+Burdock,Arctium lappa,Vegetables,,"409,44","4,11",46
+Asparagus,Asparagus officinalis,Vegetables,,"498,78","6,1",32
+Common beet,Beta vulgaris,Vegetables,,"726,09","6,44",59
+Chinese mustard,Brassica juncea,Vegetables,,"208,29","8,61",32
+Swede,Brassica napus,Vegetables,,"352,31","2,56",20
+Rape,"Brassica napus var, napus",Vegetables,,"270,05","9,3",26
+Common cabbage,Brassica oleracea,Vegetables,,"844,26","2,43",53
+Cauliflower,"Brassica oleracea var, botrytis",Vegetables,,"96,85","7,03",94
+Brussel sprouts,"Brassica oleracea var, gemmifera",Vegetables,,"93,08","1,02",93
+Kohlrabi,"Brassica oleracea var, gongylodes",Vegetables,,"923,25","2,1",89
+Broccoli,"Brassica oleracea var, italica",Vegetables,,"955,26","0,43",98
+Chinese cabbage,Brassica rapa,Vegetables,,"394,8","1,95",100
+"Pepper (C, annuum)",Capsicum annuum,Vegetables,,"890,09","6,95",1
+Endive,Cichorium endivia,Vegetables,,"268,21","4,01",15
+Chicory,Cichorium intybus,Vegetables,,"714,11","1,98",87
+Globe artichoke,Cynara scolymus,Vegetables,,"990,63","3,36",31
+Wild carrot,Daucus carota,Vegetables,,"347,75","3,52",7
+"Rocket salad (ssp,)","Eruca vesicaria ssp, sativa",Vegetables,,"857,74","6,58",55
+Swamp cabbage,Ipomoea aquatica,Vegetables,,"809,46","1,81",24
+Sweet potato,Ipomoea batatas,Vegetables,,"84,12","2,95",15
+Lettuce,Lactuca sativa,Vegetables,,"151,21","7,92",51
+Garden cress,Lepidium sativum,Vegetables,,"890,88","9,53",59
+Olive,Olea europaea,Vegetables,,"354,73","8,78",17
+Parsnip,Pastinaca sativa,Vegetables,,"702,82","2,38",51
+Avocado,Persea americana,Vegetables,,"697,07","7,32",31
+Radish,Raphanus sativus,Vegetables,,"109,17","6,26",99
+Garden rhubarb,Rheum rhabarbarum,Vegetables,,"405,21","3,42",32
+Garden tomato,Solanum lycopersicum,Vegetables,,"962,88","1,21",30
+Cherry tomato,"Solanum lycopersicum var, cerasiforme",Vegetables,,"151,66","3,66",78
+"Garden tomato (var,)","Solanum lycopersicum var, lycopersicum",Vegetables,,"911,18","4,39",82
+Eggplant,Solanum melongena,Vegetables,,"142,64","5,35",85
+Potato,Solanum tuberosum,Vegetables,,"652,26","5,58",49
+Spinach,Spinacia oleracea,Vegetables,,"814,29","1,27",44
+Celeriac,"Apium graveolens var, rapaceum",Vegetables,,"985,47","6,12",91
+Celery stalks,"Apium graveolens var, dulce",Vegetables,,"995,23","7,03",50
+"Garden onion (var,)","Allium cepa var, cepa",Vegetables,,"687,28","1,98",30
+"Pepper (C, baccatum)","Capsicum baccatum var, baccatum",Vegetables,,"274,58","4,97",35
+"Pepper (C, chinense)",Capsicum chinense,Vegetables,,"807,51","1,43",30
+Pepper (Capsicum),Capsicum,Vegetables,,"846,3","7,52",47
+Swiss chard,"Beta vulgaris ssp, cicla",Vegetables,,"367,94","2,08",4
+Tronchuda cabbage,"Brassica oleracea var, costata",Vegetables,,"710,42","1,96",22
+Shallot,Allium ascalonicum,Vegetables,,"710,37","9,5",51
+Rocket salad,Eruca vesicaria,Vegetables,,"972,62","0,12",3
+Carrot,"Daucus carota ssp, sativus",Vegetables,,"578,58","3,79",8
+Black cabbage,"Brassica oleracea var, viridis",Vegetables,,"690,68","2,93",55
+Chicory leaves,"Cichorium intybus var, foliosum",Vegetables,,"602,16","5,41",10
+Komatsuna,"Brassica rapa var, perviridis",Vegetables,,"576,37","6,81",45
+Pak choy,"Brassica rapa var, chinensis",Vegetables,,"949,59","7,41",42
+Napa cabbage,"Brassica rapa var, pekinensis",Vegetables,,"565,74","8,29",90
+Chicory roots,"Cichorium intybus var, sativum",Vegetables,,"115,73","4,25",68
+Kai-lan,"Brassica oleracea var, alboglabra",Vegetables,,"149,66","8,5",52
+Oxheart cabbage,"Brassica oleracea var, conica",Vegetables,,"110,27","7,14",34
+Daikon radish,"Raphanus sativus var, longipinnatus",Vegetables,,"845,51","9,44",12
+Black radish,"Raphanus sativus var, niger",Vegetables,,"87,72","1,29",85
+"Radish (var,)","Raphanus sativus var, sativus",Vegetables,,"79,01","8,62",62
+Red beetroot,"Beta vulgaris var, rubra",Vegetables,,"902,51","1,9",100
+Arrowhead,Sagittaria latifolia,Vegetables,,752,"4,55",54
+Arrowroot,Maranta arundinacea,Vegetables,,"250,42","8,12",28
+Bamboo shoots,Phyllostachys edulis,Vegetables,,"841,64","5,12",64
+Rapini,Brassica ruvo,Vegetables,,"481,21","0,26",20
+Giant butterbur,Petasites japonicus,Vegetables,,"632,26","3,34",33
+Cardoon,Cynara cardunculus,Vegetables,,"526,93","1,85",86
+Carob,Ceratonia siliqua,Vegetables,,"77,04","7,74",66
+Cassava,Manihot esculenta,Vegetables,,"974,65","8,74",66
+Chinese broccoli,Brassica alboglabra,Vegetables,,"191,18","2,06",35
+Chinese water chestnut,Eleocharis dulcis,Vegetables,,"119,35","5,41",35
+Garland chrysanthemum,Chrysanthemum coronarium,Vegetables,,"619,69","7,61",66
+Corn salad,Valerianella locusta,Vegetables,,"412,96","6,24",20
+Oregon yampah,Perideridia oregana,Vegetables,,"463,1","8,19",18
+Groundcherry,Physalis,Vegetables,,"760,1","7,61",27
+Horseradish tree,Moringa oleifera,Vegetables,,"27,26","5,5",55
+Jerusalem artichoke,Helianthus tuberosus,Vegetables,,"472,02","8,67",53
+Jute,Corchorus olitorius,Vegetables,,"935,09","3,19",33
+Kale,"Brassica napus var, pabularia",Vegetables,,"271,31","1,98",70
+Lambsquarters,Chenopodium album,Vegetables,,"52,76","0,79",17
+Wild leek,Allium ampeloprasum,Vegetables,,"681,3","0,21",78
+Sacred lotus,Nelumbo nucifera,Vegetables,,"76,68","7,85",30
+Malabar spinach,Basella alba,Vegetables,,"318,11","9,47",65
+Alpine sweetvetch,Hedysarum alpinum,Vegetables,,"653,72","7,44",89
+Mountain yam,Dioscorea pentaphylla,Vegetables,,"859,62","4,71",59
+Mustard spinach,Brassica perviridis,Vegetables,,"31,15","5,04",62
+New Zealand spinach,Tetragonia tetragonioides,Vegetables,,"818,45","2,08",94
+Nopal,Opuntia cochenillifera,Vegetables,,"500,33","3,46",59
+Okra,Abelmoschus esculentus,Vegetables,,"167,35","0,51",10
+"Pepper (C, frutescens)","Capsicum annuum var, annuum",Vegetables,,"657,36","2,11",91
+American pokeweed,Phytolacca americana,Vegetables,,"696,92","0,55",28
+Prairie turnip,Pediomelum esculentum,Vegetables,,"374,26","1,73",98
+Common salsify,Tragopogon porrifolius,Vegetables,,"771,69","6,06",43
+Sesbania flower,Sesbania bispinosa,Vegetables,,"580,91","3,2",17
+Taro,Colocasia esculenta,Vegetables,,"829,17","1,46",43
+Mexican groundcherry,"Physalis philadelphica var, immaculata",Vegetables,,"169,31","0,25",27
+Yam,Dioscorea,Vegetables,,"473,35","4,51",88
+Jicama,Pachyrhizus erosus,Vegetables,,"716,28","8,61",8
+Yautia,Xanthosoma sagittifolium,Vegetables,,"804,23","3,4",62
+Alaska wild rhubarb,Polygonum alpinum,Vegetables,,"434,6","7,94",59
+Jew's ear,Auricularia auricula-judae,Vegetables,,"362,65","6,08",70
+Common mushroom,Agaricus bisporus,Vegetables,,"484,2","8,66",51
+Shiitake,Lentinus edodes,Vegetables,,"41,83","3,43",44
+Enokitake,Flammulina velutipes,Vegetables,,"731,6","8,16",32
+Oyster mushroom,Pleurotus ostreatus,Vegetables,,"424,27","2,6",63
+Cloud ear fungus,Auricularia polytricha,Vegetables,,"891,97","6,02",72
+Maitake,Grifola frondosa,Vegetables,,"593,46","6,95",53
+Ostrich fern,Matteuccia struthiopteris,Vegetables,,"103,79","0,17",49
+Agave,Agave,Vegetables,,"373,53","7,3",43
+Narrowleaf cattail,Typha angustifolia,Vegetables,,"724,61","5,48",83
+Chanterelle,Cantharellus cibarius,Vegetables,,"618,99","0,88",30
+Black salsify,Scorzonera hispanica,Vegetables,,"629,84","7,7",38
+Thistle,Cirsium,Vegetables,,"842,74","4,67",25
+Other vegetable product,NULL,Vegetables,,"632,95","3,35",37
+Heart of palm,NULL,Vegetables,,"525,08","6,74",34
+Morchella (Morel),Morchellaceae,Vegetables,,"318,06","1,92",30
+Tree fern,Cyathea,Vegetables,,"778,05","0,66",51
+"Pepper (C, pubescens)",Capsicum pubescens,Vegetables,,"799,87","5,11",32
+Cabbage,"Brassica oleracea var, capitata",Vegetables,,"633,88","9,55",75
+Mushrooms,NULL,Vegetables,,"304,98","8,66",96
+Onion-family vegetables,NULL,Vegetables,,"113,33","6,47",20
+Brassicas,NULL,Vegetables,,"509,52","3,37",59
+Green vegetables,NULL,Vegetables,,"814,88","4,81",64
+Root vegetables,NULL,Vegetables,,"721,53","1,37",69
+Green bell pepper,Capsicum annuum,Vegetables,,"964,28","4,33",40
+Yellow bell pepper,Capsicum annuum,Vegetables,,"274,48","3,04",81
+Orange bell pepper,Capsicum annuum,Vegetables,,"820,9","3,83",81
+Red bell pepper,Capsicum annuum,Vegetables,,"760,82","0,44",85
+Italian sweet red pepper,Capsicum annuum,Vegetables,,"821,16","6,51",31
+White cabbage,"Brassica oleracea L, var, capitata L, f, alba DC,",Vegetables,,"610,06","1,12",8
+Romaine lettuce,"Lactuca sativa L, var, longifolia",Vegetables,,"584,7","7,96",61
+shops,,,,,,
+Nombre Tienda,Dirección,,,,,
+Supermercado Delicioso,"Calle Principal 123, Ciudad X",,,,,
+Tienda Frescura,"Avenida Central 456, Ciudad Y",,,,,
+Mercado Sabor Urbano,"Plaza Comercial Z, Ciudad Z",,,,,
+Gran Bazar Alimentario,"Calle de la Abundancia 789, Ciudad W",,,,,
+MegaSuper Ahorro,"Calle de los Descuentos 234, Ciudad V",,,,,
+EcoMarket,"Calle Ecológica 567, Ciudad U",,,,,
+SuperCompras Express,"Avenida Rápida 890, Ciudad T",,,,,
+Tienda Organix,"Calle Saludable 123, Ciudad S",,,,,
+Mercado de la Esquina,"Esquina de la Calle 456, Ciudad R",,,,,
+Fiesta de Sabores,"Plaza de la Fiesta 789, Ciudad Q",,,,,
+FreshMart,"Avenida Fresca 234, Ciudad P",,,,,
+La Esquina Del Gusto,"Esquina Deliciosa 567, Ciudad O",,,,,
+EcoFriendly Market,"Calle EcoAmigable 901, Ciudad N",,,,,
+El Rincón del Sabor,"Plaza del Sabor 234, Ciudad M",,,,,
+SuperAhorradores,"Calle de las Ofertas 567, Ciudad L",,,,,
+Gran Mercado Familiar,"Avenida Familiar 890, Ciudad K",,,,,
+Tienda de la Esquina,"Esquina de la Calle 123, Ciudad J",,,,,
+SuperCompraExpress,"Avenida Rápida 456, Ciudad I",,,,,
+Organix Market,"Calle Saludable 789, Ciudad H",,,,,
+El Bazar del Barrio,"Barrio Tradicional 234, Ciudad G",,,,,
+customers,,,,,,
+Ana García,,,,,,
+Juan Rodríguez,,,,,,
+María López,,,,,,
+Carlos Martínez,,,,,,
+Laura Hernández,,,,,,
+Pedro Gómez,,,,,,
+Sofía Díaz,,,,,,
+Alejandro Pérez,,,,,,
+Elena Fernández,,,,,,
+Javier González,,,,,,
+Isabel Ruiz,,,,,,
+Francisco Sánchez,,,,,,
+Carmen Torres,,,,,,
+Miguel Vargas,,,,,,
+Luisa Ramírez,,,,,,
+Andrés Castro,,,,,,
+Lorena Flores,,,,,,
+Roberto Jiménez,,,,,,
+Patricia Navarro,,,,,,
+Daniel Reyes,,,,,,
+Verónica Morales,,,,,,
+Raúl Ortiz,,,,,,
+Adriana Silva,,,,,,
+Martín Molina,,,,,,
+Silvia Herrera,,,,,,
+José Medina,,,,,,
+Cristina Ortega,,,,,,
+Ricardo Ramos,,,,,,
+Gabriela Cruz,,,,,,
+Alberto Mendoza,,,,,,
+Natalia Jiménez,,,,,,
