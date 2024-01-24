@@ -38,7 +38,7 @@ public class GestorFicheros {
                     continue;
                 }
 
-                String[] parts = line.split(",");
+                String[] parts = customSplit(line);
                 switch (currentSection) {
                     case "products":
                         if (parts.length >= 7) {
@@ -79,7 +79,7 @@ public class GestorFicheros {
                             Tienda tienda = new Tienda(shopName, shopAddress);
                             tiendas.add(tienda);
 
-                            System.out.println(tiendas);
+                            System.out.println(tienda);
                         }
                         break;
                     case "customers":
@@ -88,7 +88,7 @@ public class GestorFicheros {
                             Cliente cliente = new Cliente(customerName, null);
                             clientes.add(cliente);
 
-                            System.out.println(clientes);
+                            System.out.println(cliente);
                         }
                         break;
                 }
@@ -97,6 +97,31 @@ public class GestorFicheros {
             e.printStackTrace();
         }
     }
+
+    private static String[] customSplit(String line) {
+        ArrayList<String> parts = new ArrayList<>();
+        boolean inQuotes = false;
+        StringBuilder buffer = new StringBuilder();
+
+        for (char ch : line.toCharArray()) {
+            if (ch == '\"') {
+                inQuotes = !inQuotes; // Cambia el estado de estar dentro de las comillas
+            } else if (ch == ',' && !inQuotes) {
+                parts.add(buffer.toString().trim()); // Agrega la parte al resultado y limpia el buffer
+                buffer = new StringBuilder();
+            } else {
+                buffer.append(ch); // Agrega el carácter al buffer
+            }
+
+        }
+
+        if (!buffer.isEmpty()) {
+            parts.add(buffer.toString().trim()); // Agrega la última parte al resultado
+        }
+
+        return parts.toArray(new String[0]);
+    }
+
 
     public static void main(String[] args) {
         GestorProductos gestorProductos = new GestorProductos();
@@ -109,9 +134,5 @@ public class GestorFicheros {
 
         leerDatosDesdeCSV(absolutePath, gestorProductos, tiendas, clientes);
 
-        // Imprimir para verificar
-        System.out.println(gestorProductos);
-        System.out.println(tiendas);
-        System.out.println(clientes);
     }
 }

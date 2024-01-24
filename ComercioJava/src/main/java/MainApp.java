@@ -43,7 +43,8 @@ public class MainApp {
             switch (opcion) {
                 case 1:
                     // Implementar lógica para añadir un producto a una tienda
-                    //gestorProductos.agregarProducto();
+
+                    gestorProductos.agregarProducto();
                     break;
                 case 2:
                     // Implementar lógica para eliminar un producto de una tienda
