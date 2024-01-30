@@ -27,9 +27,4 @@ public class Carne extends Producto {
                 '}';
     }
 
-    public static void main(String[] args) {
-        Carne carne = new Carne("Ternera", "Bos taurus", 250, 5.5, "Poultry");
-        System.out.println(carne);
-    }
-
 }

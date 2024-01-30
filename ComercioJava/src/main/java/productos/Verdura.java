@@ -47,9 +47,4 @@ public class Verdura extends Producto {
                 '}';
     }
 
-    public static void main(String[] args) {
-        Verdura verdura = new Verdura("Tomate", "Solanum lycopersicum", 18, 1.5, LocalDate.of(2024, 10, 15), 7);
-        System.out.println(verdura);
-    }
-
 }

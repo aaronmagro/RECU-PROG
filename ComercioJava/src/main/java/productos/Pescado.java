@@ -27,9 +27,4 @@ public class Pescado extends Producto {
                 '}';
     }
 
-    public static void main(String[] args) {
-        Pescado pescado = new Pescado("Salmón", "Salmo salar", 208, 3.5, "Fishes");
-        System.out.println(pescado);
-    }
-
 }

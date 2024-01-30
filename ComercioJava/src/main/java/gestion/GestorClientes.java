@@ -14,13 +14,26 @@ public class GestorClientes {
         this.tienda = tienda;
     }
 
-    public void agregarCliente(Cliente cliente) {
+    public void addCliente(Cliente cliente) {
         clientes.add(cliente);
     }
 
-    public void eliminarCliente(Cliente cliente) {
+    public void delCliente(Cliente cliente) {
         clientes.remove(cliente);
     }
 
+    public ArrayList<Cliente> getClientes() {
+        return clientes;
+    }
+
+    public Tienda getTienda() {
+        return tienda;
+    }
+
+    public void setTienda(Tienda tienda) {
+        this.tienda = tienda;
+    }
+
 }
+
 

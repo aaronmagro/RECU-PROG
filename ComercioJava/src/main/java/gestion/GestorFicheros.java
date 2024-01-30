@@ -15,7 +15,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class GestorFicheros {
-    public static void leerDatosDesdeCSV(String absolutePath, GestorProductos gestorProductos, ArrayList<Tienda> tiendas, ArrayList<Cliente> clientes) {
+    public static void leerDatosDesdeCSV(String absolutePath, ArrayList<Producto> productos, ArrayList<Tienda> tiendas, ArrayList<Cliente> clientes) {
         try (BufferedReader br = new BufferedReader(new FileReader(absolutePath))) {
             String line;
             String currentSection = "";
@@ -63,10 +63,7 @@ public class GestorFicheros {
                                     break;
                             }
 
-                            /*if (producto != null) {
-                                gestorProductos.agregarProducto(producto, 1); // Añade el producto con cantidad inicial de 1
-                            }*/
-
+                            productos.add(producto);
                             System.out.println(producto);
 
 
@@ -85,7 +82,16 @@ public class GestorFicheros {
                     case "customers":
                         if (parts.length >= 1) {
                             String customerName = parts[0];
-                            Cliente cliente = new Cliente(customerName, null);
+                            // hacer una lista de la copra aleatoria de 1 a 10 productos para cada cliente
+                            ArrayList<Producto> listaCompra = new ArrayList<>();
+                            int numeroProductos = (int) (Math.random() * 10) + 1;
+                            for (int i = 0; i < numeroProductos; i++) {
+                                listaCompra.add(productos.get((int) (Math.random() * productos.size())));
+                            }
+                            // De la misma lista, sacar el producto favorito
+                            Producto productoFavorito = listaCompra.get((int) (Math.random() * listaCompra.size()));
+                            Cliente cliente = new Cliente(customerName, productoFavorito, listaCompra);
+
                             clientes.add(cliente);
 
                             System.out.println(cliente);
@@ -120,7 +126,7 @@ public class GestorFicheros {
 
                 for (char ch : line.toCharArray()) {
                     if (ch == '\"') {
-                        inQuotes = !inQuotes; // Cambia el estado de estar dentro de las comillas
+                        inQuotes = !inQuotes; // Cambia el estado de las comillas
                     } else if (ch == ',' && !inQuotes) {
                         parts.add(buffer.toString().trim()); // Agrega la parte al resultado y limpia el buffer
                         buffer = new StringBuilder();
@@ -145,17 +151,4 @@ public class GestorFicheros {
         return new String[] {};
     }
 
-
-    public static void main(String[] args) {
-        GestorProductos gestorProductos = new GestorProductos();
-        ArrayList<Tienda> tiendas = new ArrayList<>();
-        ArrayList<Cliente> clientes = new ArrayList<>();
-
-        String relativePath = "datosAplicacion.csv";
-        File file = new File(relativePath);
-        String absolutePath = file.getAbsolutePath();
-
-        leerDatosDesdeCSV(absolutePath, gestorProductos, tiendas, clientes);
-
-    }
 }

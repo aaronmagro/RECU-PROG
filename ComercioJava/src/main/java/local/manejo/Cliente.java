@@ -10,10 +10,10 @@ public class Cliente {
     private Producto productoFavorito;
     private ArrayList<Producto> listaCompra;
 
-    public Cliente(String nombre, Producto productoFavorito) {
+    public Cliente(String nombre, Producto productoFavorito, ArrayList<Producto> listaCompra) {
         this.nombre = nombre;
         this.productoFavorito = productoFavorito;
-        this.listaCompra = new ArrayList<>();
+        this.listaCompra = listaCompra;
     }
 
     public String getNombre() {

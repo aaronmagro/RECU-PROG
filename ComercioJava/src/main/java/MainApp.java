@@ -1,6 +1,7 @@
 import gestion.GestorClientes;
 import gestion.GestorFicheros;
 import gestion.GestorProductos;
+import gestion.GestorTiendas;
 import local.inventario.Stock;
 import local.manejo.Cliente;
 import local.manejo.Tienda;
@@ -9,18 +10,23 @@ import productos.Verdura;
 import productos.Carne;
 import productos.Pescado;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class MainApp {
     public static void main(String[] args) {
         // Crear instancias de gestores y tiendas
-        GestorProductos gestorProductos = new GestorProductos();
-        ArrayList<Tienda> tiendas = new ArrayList<>();
         ArrayList<Cliente> clientes = new ArrayList<>();
+        ArrayList<Tienda> tiendas = new ArrayList<>();
+        ArrayList<Producto> productos = new ArrayList<>();
+
+        //GestorClientes gestorClientes = new GestorClientes();
+        GestorProductos gestorProductos = new GestorProductos();
+        GestorTiendas gestorTiendas = new GestorTiendas();
 
         // Cargar datos desde el archivo CSV
-        GestorFicheros.leerDatosDesdeCSV("datosAplicacion.csv", gestorProductos, tiendas, clientes);
+        GestorFicheros.leerDatosDesdeCSV("datosAplicacion.csv", productos, tiendas, clientes);
 
         // Menú principal
         Scanner scanner = new Scanner(System.in);
@@ -43,8 +49,23 @@ public class MainApp {
             switch (opcion) {
                 case 1:
                     // Implementar lógica para añadir un producto a una tienda
+                    // Mostrar las tiendas disponibles
 
-                    gestorProductos.agregarProducto();
+                    gestorTiendas.mostrarTiendas();
+                    System.out.println("Escriba el nombre de la tienda: ");
+                    String nombreTienda = scanner.nextLine();
+
+                    // Seleccionar el producto por su nombre con un numero
+                    System.out.println("Seleccione un producto: ");
+                    gestorProductos.mostrarProductos();
+                    String nombreProducto = scanner.nextLine();
+
+                    // Introducir la cantidad
+                    System.out.println("Introduzca la cantidad: ");
+                    int cantidad = scanner.nextInt();
+                    scanner.nextLine();
+                    //gestorTiendas.addStockATienda(nombreTienda, new Stock(, cantidad));
+
                     break;
                 case 2:
                     // Implementar lógica para eliminar un producto de una tienda
