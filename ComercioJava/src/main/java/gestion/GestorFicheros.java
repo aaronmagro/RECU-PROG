@@ -38,7 +38,7 @@ public class GestorFicheros {
                     continue;
                 }
 
-                String[] parts = customSplit(line);
+                String[] parts = customSplit(line, currentSection);
                 switch (currentSection) {
                     case "products":
                         if (parts.length >= 7) {
@@ -98,28 +98,51 @@ public class GestorFicheros {
         }
     }
 
-    private static String[] customSplit(String line) {
-        ArrayList<String> parts = new ArrayList<>();
-        boolean inQuotes = false;
-        StringBuilder buffer = new StringBuilder();
+    private static String[] customSplit(String line, String currentSection) {
+        // Dividir la línea de manera predeterminada para obtener el grupo del producto
+        String[] preliminaryParts = line.split(",");
+        for (int i = 0; i < preliminaryParts.length; i++) {
+            preliminaryParts[i] = preliminaryParts[i].trim();
+        }
 
-        for (char ch : line.toCharArray()) {
-            if (ch == '\"') {
-                inQuotes = !inQuotes; // Cambia el estado de estar dentro de las comillas
-            } else if (ch == ',' && !inQuotes) {
-                parts.add(buffer.toString().trim()); // Agrega la parte al resultado y limpia el buffer
-                buffer = new StringBuilder();
-            } else {
-                buffer.append(ch); // Agrega el carácter al buffer
+        // Si estamos en la sección de productos y hay suficientes partes, obtenemos el grupo del producto
+        String group = "";
+        if (currentSection.equals("products") && preliminaryParts.length >= 3) {
+            group = preliminaryParts[2];
+        }
+
+        // Ahora dividimos la línea de la manera correcta basándonos en el grupo del producto
+        if (currentSection.equals("products")) {
+            if (group.equals("Vegetables")) {
+                ArrayList<String> parts = new ArrayList<>();
+                boolean inQuotes = false;
+                StringBuilder buffer = new StringBuilder();
+
+                for (char ch : line.toCharArray()) {
+                    if (ch == '\"') {
+                        inQuotes = !inQuotes; // Cambia el estado de estar dentro de las comillas
+                    } else if (ch == ',' && !inQuotes) {
+                        parts.add(buffer.toString().trim()); // Agrega la parte al resultado y limpia el buffer
+                        buffer = new StringBuilder();
+                    } else {
+                        buffer.append(ch); // Agrega el carácter al buffer
+                    }
+                }
+                if (!buffer.isEmpty()) {
+                    parts.add(buffer.toString().trim()); // Agrega la última parte al resultado
+                }
+
+                return parts.toArray(new String[0]);
+            } else if (group.equals("Aquatic foods") || group.equals("Animal foods")) {
+                return preliminaryParts;
             }
-
         }
 
-        if (!buffer.isEmpty()) {
-            parts.add(buffer.toString().trim()); // Agrega la última parte al resultado
+        if (currentSection.equals("shops") || currentSection.equals("customers")) {
+            return preliminaryParts;
         }
 
-        return parts.toArray(new String[0]);
+        return new String[] {};
     }
 
 
