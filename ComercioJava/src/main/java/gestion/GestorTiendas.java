@@ -10,11 +10,10 @@ public class GestorTiendas {
 
     private ArrayList<Tienda> tiendas;
     private GestorProductos gestorProductos;
-    private GestorFicheros gestorFicheros;
 
-    public GestorTiendas() {
-        this.tiendas = gestorFicheros.tiendas;
-        this.gestorProductos = new GestorProductos();
+    public GestorTiendas(GestorProductos gestorProductos) {
+        this.tiendas = new ArrayList<>();
+        this.gestorProductos = gestorProductos;
     }
 
     public void addTienda(Tienda tienda) {
@@ -25,9 +24,9 @@ public class GestorTiendas {
         return tiendas;
     }
 
-    public void mostrarTiendas() {
+    public void mostrarNombreTiendas() {
         for (Tienda tienda : tiendas) {
-            System.out.println(tienda);
+            System.out.println(tienda.getNombre());
         }
     }
 
@@ -51,13 +50,25 @@ public class GestorTiendas {
         return null;
     }
 
-    public Stock addStockATienda(String nombreTienda, Stock stock) {
+    public void addStockATienda(String nombreTienda, Stock stock) {
         Tienda tienda = buscarTienda(nombreTienda);
         if (tienda != null) {
-            tienda.getGestorProductos().addStock(stock);
-            return stock;
+            gestorProductos.addStock(stock);
         }
-        return null;
     }
+
+    public void mostrarProductosTienda(String nombreTienda) {
+        Tienda tienda = buscarTienda(nombreTienda);
+        if (tienda != null) {
+            System.out.println("Tienda: " + tienda.getNombre());
+            ArrayList<Stock> stocks = tienda.getGestorProductos().getStocks();
+            for (Stock stock : stocks) {
+                System.out.println("Producto: " + stock.getProducto().getNombre());
+            }
+        } else {
+            System.out.println("No se encontró la tienda con el nombre: " + nombreTienda);
+        }
+    }
+
 
 }

@@ -7,11 +7,9 @@ import java.util.ArrayList;
 
 public class GestorClientes {
     private ArrayList<Cliente> clientes;
-    private Tienda tienda;
 
-    public GestorClientes(Tienda tienda) {
+    public GestorClientes() {
         this.clientes = new ArrayList<>();
-        this.tienda = tienda;
     }
 
     public void addCliente(Cliente cliente) {
@@ -24,14 +22,6 @@ public class GestorClientes {
 
     public ArrayList<Cliente> getClientes() {
         return clientes;
-    }
-
-    public Tienda getTienda() {
-        return tienda;
-    }
-
-    public void setTienda(Tienda tienda) {
-        this.tienda = tienda;
     }
 
 }

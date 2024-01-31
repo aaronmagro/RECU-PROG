@@ -8,14 +8,16 @@ import productos.Producto;
 import productos.Verdura;
 
 import java.io.BufferedReader;
-import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class GestorFicheros {
-    public static void leerDatosDesdeCSV(String absolutePath, ArrayList<Producto> productos, ArrayList<Tienda> tiendas, ArrayList<Cliente> clientes) {
+
+    ArrayList<Producto> productos;
+
+    public static void leerDatosDesdeCSV(String absolutePath, ArrayList<Producto> productos, GestorTiendas gestorTiendas, GestorClientes gestorClientes) {
         try (BufferedReader br = new BufferedReader(new FileReader(absolutePath))) {
             String line;
             String currentSection = "";
@@ -66,16 +68,23 @@ public class GestorFicheros {
                             productos.add(producto);
                             System.out.println(producto);
 
-
                         }
                         break;
                     case "shops":
                         if (parts.length >= 2) {
                             String shopName = parts[0];
                             String shopAddress = parts[1];
-                            Tienda tienda = new Tienda(shopName, shopAddress);
-                            tiendas.add(tienda);
+                            Tienda tienda = new Tienda(shopName, shopAddress,
+                                    new GestorProductos() {
+                                        {
+                                            for (int i = 0; i < 10; i++) {
+                                                addProducto(productos.get((int) (Math.random() * productos.size())));
+                                            }
+                                        }
+                                    }
+                            );
 
+                            gestorTiendas.addTienda(tienda);
                             System.out.println(tienda);
                         }
                         break;
@@ -92,8 +101,7 @@ public class GestorFicheros {
                             Producto productoFavorito = listaCompra.get((int) (Math.random() * listaCompra.size()));
                             Cliente cliente = new Cliente(customerName, productoFavorito, listaCompra);
 
-                            clientes.add(cliente);
-
+                            gestorClientes.addCliente(cliente);
                             System.out.println(cliente);
                         }
                         break;
@@ -149,6 +157,10 @@ public class GestorFicheros {
         }
 
         return new String[] {};
+    }
+
+    public ArrayList<Producto> getProductos() {
+        return productos;
     }
 
 }

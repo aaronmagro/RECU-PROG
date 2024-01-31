@@ -1,20 +1,32 @@
 package gestion;
 
 import local.inventario.Stock;
+import local.manejo.Tienda;
 import productos.Producto;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 public class GestorProductos {
 
     private ArrayList<Stock> stocks;
+    private ArrayList<Producto> productos;
 
     public GestorProductos() {
+        this.productos = new ArrayList<>();
         this.stocks = new ArrayList<>();
     }
 
-    public GestorProductos (ArrayList<Stock> stocks) {
-        this.stocks = stocks;
+    public void addProducto(Producto producto) {
+        productos.add(producto);
+    }
+
+    public void delProducto(Producto producto) {
+        productos.remove(producto);
+    }
+
+    public ArrayList<Producto> getProductos() {
+        return productos;
     }
 
     public void addStock(Stock stock) {
@@ -38,12 +50,13 @@ public class GestorProductos {
         return null;
     }
 
-    public void mostrarProductos() {
-        int i = 1;
+    public void mostrarProductosTienda(String nombreTienda) {
         for (Stock stock : stocks) {
-            System.out.println(i + ". " + stock.getProducto().getNombre());
-            i++;
+            if (stock.getProducto().getNombre().equals(nombreTienda)) {
+                System.out.println(stock.getProducto().getNombre());
+            }
         }
     }
+
 
 }

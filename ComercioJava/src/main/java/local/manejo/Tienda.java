@@ -11,18 +11,12 @@ public class Tienda {
     private String nombre;
     private String direccion;
     private GestorProductos gestorProductos;
-    private GestorClientes gestorClientes;
-    private static GestorFicheros gestorFicheros;
 
-    public Tienda(String nombre, String direccion) {
+    // Constructor
+    public Tienda(String nombre, String direccion, GestorProductos gestorProductos) {
         this.nombre = nombre;
         this.direccion = direccion;
-        this.gestorProductos = new GestorProductos();
-        this.gestorClientes = new GestorClientes(this);
-    }
-
-    public GestorClientes getGestorClientes() {
-        return gestorClientes;
+        this.gestorProductos = gestorProductos;
     }
 
     public String getNombre() {

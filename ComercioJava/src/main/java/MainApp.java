@@ -17,16 +17,14 @@ import java.util.Scanner;
 public class MainApp {
     public static void main(String[] args) {
         // Crear instancias de gestores y tiendas
-        ArrayList<Cliente> clientes = new ArrayList<>();
-        ArrayList<Tienda> tiendas = new ArrayList<>();
         ArrayList<Producto> productos = new ArrayList<>();
 
-        //GestorClientes gestorClientes = new GestorClientes();
         GestorProductos gestorProductos = new GestorProductos();
-        GestorTiendas gestorTiendas = new GestorTiendas();
+        GestorTiendas gestorTiendas = new GestorTiendas(gestorProductos);
+        GestorClientes gestorClientes = new GestorClientes();
 
         // Cargar datos desde el archivo CSV
-        GestorFicheros.leerDatosDesdeCSV("datosAplicacion.csv", productos, tiendas, clientes);
+        GestorFicheros.leerDatosDesdeCSV("datosAplicacion.csv", productos, gestorTiendas, gestorClientes);
 
         // Menú principal
         Scanner scanner = new Scanner(System.in);
@@ -51,20 +49,27 @@ public class MainApp {
                     // Implementar lógica para añadir un producto a una tienda
                     // Mostrar las tiendas disponibles
 
-                    gestorTiendas.mostrarTiendas();
-                    System.out.println("Escriba el nombre de la tienda: ");
+                    gestorTiendas.mostrarNombreTiendas();
+                    System.out.print("Escriba el nombre de la tienda: ");
                     String nombreTienda = scanner.nextLine();
 
                     // Seleccionar el producto por su nombre con un numero
-                    System.out.println("Seleccione un producto: ");
-                    gestorProductos.mostrarProductos();
+                    gestorProductos.mostrarProductosTienda(nombreTienda);
+                    System.out.print("Seleccione un producto: ");
                     String nombreProducto = scanner.nextLine();
 
                     // Introducir la cantidad
-                    System.out.println("Introduzca la cantidad: ");
+                    System.out.print("Introduzca la cantidad: ");
                     int cantidad = scanner.nextInt();
-                    scanner.nextLine();
-                    //gestorTiendas.addStockATienda(nombreTienda, new Stock(, cantidad));
+
+                    // Crear el stock
+                    Stock stock = new Stock(gestorProductos.buscarProducto(nombreProducto), cantidad);
+
+                    // Añadir el stock a la tienda
+                    gestorTiendas.addStockATienda(nombreTienda, stock);
+
+                    // Mostrar que se ha añadido correctamente
+                    gestorTiendas.buscarTienda(nombreTienda).getGestorProductos().mostrarProductosTienda(nombreTienda);
 
                     break;
                 case 2:
@@ -98,10 +103,6 @@ public class MainApp {
                     System.out.println("Opción no válida. Por favor, seleccione una opción válida.");
             }
         }
-
-        //mostrar los datos del csv leido
-
-
 
     }
 
