@@ -1,5 +1,6 @@
 package gestion;
 
+import local.inventario.Stock;
 import local.manejo.Cliente;
 import local.manejo.Tienda;
 import productos.Carne;
@@ -74,15 +75,12 @@ public class GestorFicheros {
                         if (parts.length >= 2) {
                             String shopName = parts[0];
                             String shopAddress = parts[1];
-                            Tienda tienda = new Tienda(shopName, shopAddress,
-                                    new GestorProductos() {
-                                        {
-                                            for (int i = 0; i < 10; i++) {
-                                                addProducto(productos.get((int) (Math.random() * productos.size())));
-                                            }
-                                        }
-                                    }
-                            );
+                            GestorProductos gestorProductos = new GestorProductos();
+                            // agregar 10 productos aleatorios al gestorProductos de cada tienda
+                            for (int i = 0; i < 10; i++) {
+                                gestorProductos.addStock(new Stock(productos.get((int) (Math.random() * productos.size())), (int) (Math.random() * 10) + 1));
+                            }
+                            Tienda tienda = new Tienda(shopName, shopAddress, gestorProductos);
 
                             gestorTiendas.addTienda(tienda);
                             System.out.println(tienda);

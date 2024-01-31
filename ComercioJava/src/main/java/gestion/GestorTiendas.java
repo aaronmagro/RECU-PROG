@@ -60,15 +60,10 @@ public class GestorTiendas {
     public void mostrarProductosTienda(String nombreTienda) {
         Tienda tienda = buscarTienda(nombreTienda);
         if (tienda != null) {
-            System.out.println("Tienda: " + tienda.getNombre());
-            ArrayList<Stock> stocks = tienda.getGestorProductos().getStocks();
-            for (Stock stock : stocks) {
-                System.out.println("Producto: " + stock.getProducto().getNombre());
+            for (Stock stock : tienda.getGestorProductos().getStocks()) {
+                System.out.println(stock.getProducto().getNombre());
             }
-        } else {
-            System.out.println("No se encontró la tienda con el nombre: " + nombreTienda);
         }
     }
-
 
 }

@@ -48,6 +48,7 @@ public class Tienda {
         return "Tienda{" +
                 "nombre='" + nombre + '\'' +
                 ", direccion='" + direccion + '\'' +
+                ", gestorProductos=" + gestorProductos +
                 '}';
     }
 

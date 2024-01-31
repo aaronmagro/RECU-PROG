@@ -1,32 +1,16 @@
 package gestion;
 
 import local.inventario.Stock;
-import local.manejo.Tienda;
 import productos.Producto;
 
 import java.util.ArrayList;
-import java.util.Random;
 
 public class GestorProductos {
 
     private ArrayList<Stock> stocks;
-    private ArrayList<Producto> productos;
 
     public GestorProductos() {
-        this.productos = new ArrayList<>();
         this.stocks = new ArrayList<>();
-    }
-
-    public void addProducto(Producto producto) {
-        productos.add(producto);
-    }
-
-    public void delProducto(Producto producto) {
-        productos.remove(producto);
-    }
-
-    public ArrayList<Producto> getProductos() {
-        return productos;
     }
 
     public void addStock(Stock stock) {
@@ -50,12 +34,81 @@ public class GestorProductos {
         return null;
     }
 
-    public void mostrarProductosTienda(String nombreTienda) {
+    public Stock buscarProductoSecuencial(String nombreProductoBusqueda) {
         for (Stock stock : stocks) {
-            if (stock.getProducto().getNombre().equals(nombreTienda)) {
-                System.out.println(stock.getProducto().getNombre());
+            if (stock.getProducto().getNombre().equals(nombreProductoBusqueda)) {
+                return stock;
             }
         }
+        return null;
+    }
+
+    public Stock buscarProductoBinario(String nombreProductoBusqueda) {
+        // Ordenar la lista de stocks alfabéticamente por el nombre del producto
+        stocks.sort((stock1, stock2) -> stock1.getProducto().getNombre().compareTo(stock2.getProducto().getNombre()));
+
+        int low = 0;
+        int high = stocks.size() - 1;
+
+        while (low <= high) {
+            int mid = (low + high) / 2;
+            Stock midStock = stocks.get(mid);
+            int comparison = midStock.getProducto().getNombre().compareTo(nombreProductoBusqueda);
+
+            if (comparison < 0) {
+                low = mid + 1;
+            } else if (comparison > 0) {
+                high = mid - 1;
+            } else {
+                return midStock; // nombre encontrado
+            }
+        }
+        return null; // nombre no encontrado
+    }
+
+    public Producto addStock(String nombreProducto, int cantidadStock) {
+        Producto producto = buscarProducto(nombreProducto);
+        if (producto != null) {
+            Stock stock = new Stock(producto, cantidadStock);
+            addStock(stock);
+            return producto;
+        }
+        return null;
+    }
+
+    // Mostrar toda la información de los productos de una tienda ordenada por stock. Para
+    //ello se deberá implementar el algoritmo de la burbuja y otro algoritmo a elegir. Se
+    //deberá mostrar el tiempo que tarda la aplicación en devolver la información.
+    public void ordenarBurbuja() {
+        long startTime = System.nanoTime();
+        for (int i = 0; i < stocks.size() - 1; i++) {
+            for (int j = 0; j < stocks.size() - i - 1; j++) {
+                if (stocks.get(j).getCantidad() > stocks.get(j + 1).getCantidad()) {
+                    Stock temp = stocks.get(j);
+                    stocks.set(j, stocks.get(j + 1));
+                    stocks.set(j + 1, temp);
+                }
+            }
+        }
+        long endTime = System.nanoTime();
+        // mostrar todos los stocks ordenados segun burbuja
+        for (Stock stock : stocks) {
+            System.out.println(stock.getProducto().getNombre() + " " + stock.getCantidad());
+        }
+
+        System.out.println("Tiempo de ejecución del algoritmo de la burbuja: " + (endTime - startTime) + " nanosegundos");
+    }
+
+    // ordenar con otro algoritmo a elegir
+    public void ordenarOtro() {
+        long startTime = System.nanoTime();
+        stocks.sort((stock1, stock2) -> stock1.getCantidad() - stock2.getCantidad());
+        long endTime = System.nanoTime();
+        // mostrar todos los stocks ordenados
+        for (Stock stock : stocks) {
+            System.out.println(stock.getProducto().getNombre() + " " + stock.getCantidad());
+        }
+        System.out.println("Tiempo de ejecución del otro algoritmo: " + (endTime - startTime) + " nanosegundos");
     }
 
 
