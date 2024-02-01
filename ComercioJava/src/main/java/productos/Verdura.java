@@ -34,6 +34,10 @@ public class Verdura extends Producto {
         fechaExpiracion = fechaRecoleccion.plusDays(caducidad);
     }
 
+    public boolean estaCaducada() {
+        return LocalDate.now().isAfter(fechaExpiracion);
+    }
+
     @Override
     public String toString() {
         return "Verdura{" +

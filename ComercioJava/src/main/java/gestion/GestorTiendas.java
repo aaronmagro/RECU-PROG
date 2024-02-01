@@ -24,9 +24,10 @@ public class GestorTiendas {
         return tiendas;
     }
 
+
     public void mostrarNombreTiendas() {
-        for (Tienda tienda : tiendas) {
-            System.out.println(tienda.getNombre());
+        for (int i = 0; i < tiendas.size(); i++) {
+            System.out.println((i + 1) + ". " + tiendas.get(i).getNombre());
         }
     }
 

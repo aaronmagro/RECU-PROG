@@ -8,10 +8,10 @@ import productos.Pescado;
 import productos.Producto;
 import productos.Verdura;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
 public class GestorFicheros {
@@ -155,6 +155,73 @@ public class GestorFicheros {
         }
 
         return new String[] {};
+    }
+
+    public static void exportarSimulacion(Tienda tienda, GestorClientes gestorClientes) {
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyyMMdd_HHmmss");
+        LocalDateTime now = LocalDateTime.now();
+        String filename = "resumen_" + tienda.getNombre() + "_" + dtf.format(now) + ".txt";
+
+        String simulationResults = hacerSimulacion(tienda, gestorClientes);
+
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(filename))) {
+            writer.write(simulationResults);
+        } catch (IOException e) {
+            System.out.println("An error occurred while writing to the file: " + e.getMessage());
+        }
+    }
+
+    private static String hacerSimulacion(Tienda tienda, GestorClientes gestorClientes) {
+        StringBuilder simulationResults = new StringBuilder();
+
+        simulationResults.append("Resumen de venta de la tienda " + tienda.getNombre() + ":\n");
+        simulationResults.append("\n -= Clientes =- \n");
+        for (Cliente cliente : gestorClientes.getClientes()) {
+            simulationResults.append(cliente.getNombre() + "\n");
+        }
+        simulationResults.append("\n -= Stock Inicial =- \n");
+        for (Stock stock : tienda.getGestorProductos().getStocks()) {
+            simulationResults.append(stock.getProducto().getNombre() + " - " + stock.getCantidad() + "\n");
+        }
+        simulationResults.append("\n=============== INICIO DE LA SIMULACIÓN ===============\n");
+        for (Cliente cliente : gestorClientes.getClientes()) {
+            simulationResults.append("\n----- Cliente: " + cliente.getNombre() + " -----\n");
+            simulationResults.append("Producto favorito: " + cliente.getProductoFavorito().getNombre() + "\n");
+            simulationResults.append("Lista de la compra:\n");
+            for (Producto producto : cliente.getListaCompra()) {
+                simulationResults.append(producto.getNombre() + "\n");
+            }
+            simulationResults.append("\nCompra:\n");
+            for (Producto producto : cliente.getListaCompra()) {
+                Stock stock = tienda.getGestorProductos().buscarProductoSecuencial(producto.getNombre());
+                // si el producto es una verdura, comprobar si está caducada
+                if (producto instanceof Verdura verdura) {
+                    if (verdura.estaCaducada()) {
+                        simulationResults.append("No se puede vender " + producto.getNombre() + " a " + cliente.getNombre() + " porque está caducada\n");
+                        continue;
+                    }
+                }
+
+                if (stock != null) {
+                    if (stock.getCantidad() > 0) {
+                        simulationResults.append("Se ha vendido " + producto.getNombre() + " a " + cliente.getNombre() + "\n");
+                        stock.setCantidad(stock.getCantidad() - 1);
+                    } else {
+                        simulationResults.append("No hay stock de " + producto.getNombre() + " para " + cliente.getNombre() + "\n");
+                    }
+                } else {
+                    simulationResults.append("No hay stock de " + producto.getNombre() + " para " + cliente.getNombre() + "\n");
+                }
+            }
+        }
+        // Mostrar el stock restante
+        simulationResults.append("\n=============== FIN DE LA SIMULACIÓN ===============\n");
+        simulationResults.append("\n -= Stock restante =- \n");
+        for (Stock stock : tienda.getGestorProductos().getStocks()) {
+            simulationResults.append(stock.getProducto().getNombre() + " - " + stock.getCantidad() + "\n");
+        }
+
+        return simulationResults.toString();
     }
 
     public ArrayList<Producto> getProductos() {

@@ -66,19 +66,7 @@ public class GestorProductos {
         return null; // nombre no encontrado
     }
 
-    public Producto addStock(String nombreProducto, int cantidadStock) {
-        Producto producto = buscarProducto(nombreProducto);
-        if (producto != null) {
-            Stock stock = new Stock(producto, cantidadStock);
-            addStock(stock);
-            return producto;
-        }
-        return null;
-    }
-
-    // Mostrar toda la información de los productos de una tienda ordenada por stock. Para
-    //ello se deberá implementar el algoritmo de la burbuja y otro algoritmo a elegir. Se
-    //deberá mostrar el tiempo que tarda la aplicación en devolver la información.
+    // ordenar con el algoritmo de la burbuja
     public void ordenarBurbuja() {
         long startTime = System.nanoTime();
         for (int i = 0; i < stocks.size() - 1; i++) {
@@ -93,10 +81,10 @@ public class GestorProductos {
         long endTime = System.nanoTime();
         // mostrar todos los stocks ordenados segun burbuja
         for (Stock stock : stocks) {
-            System.out.println(stock.getProducto().getNombre() + " " + stock.getCantidad());
+            System.out.println(stock.getProducto().getNombre() + " : " + stock.getCantidad());
         }
 
-        System.out.println("Tiempo de ejecución del algoritmo de la burbuja: " + (endTime - startTime) + " nanosegundos");
+        System.out.println("\nTiempo de ejecución del algoritmo de la burbuja: " + (endTime - startTime) + " nanosegundos");
     }
 
     // ordenar con otro algoritmo a elegir
@@ -106,9 +94,9 @@ public class GestorProductos {
         long endTime = System.nanoTime();
         // mostrar todos los stocks ordenados
         for (Stock stock : stocks) {
-            System.out.println(stock.getProducto().getNombre() + " " + stock.getCantidad());
+            System.out.println(stock.getProducto().getNombre() + " : " + stock.getCantidad());
         }
-        System.out.println("Tiempo de ejecución del otro algoritmo: " + (endTime - startTime) + " nanosegundos");
+        System.out.println("\nTiempo de ejecución del otro algoritmo: " + (endTime - startTime) + " nanosegundos");
     }
 
 
