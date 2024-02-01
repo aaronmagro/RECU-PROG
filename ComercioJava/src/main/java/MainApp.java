@@ -33,6 +33,7 @@ public class MainApp {
     public static final String ANSI_INVERSE = "\u001b[7m";
     public static final String ANSI_LIGHTGREEN = "\u001b[92m";
     public static final String ANSI_LIGHTPINK = "\u001b[95m";
+    public static final String ANSI_LIGHTYELLOW = "\u001b[93m";
     public static final String ANSI_PINK = "\u001b[38;5;206m";
 
 
@@ -43,13 +44,14 @@ public class MainApp {
         GestorProductos gestorProductos = new GestorProductos();
         GestorTiendas gestorTiendas = new GestorTiendas(gestorProductos);
         GestorClientes gestorClientes = new GestorClientes();
-        GestorFicheros gestorFicheros = new GestorFicheros();
 
         // Cargar datos desde el archivo CSV
         GestorFicheros.leerDatosDesdeCSV("datosAplicacion.csv", productos, gestorTiendas, gestorClientes);
 
         // Menú principal
         Scanner scanner = new Scanner(System.in);
+        System.out.println("───────────────────────────────────────────────────────────────────────────────────────────────────────────────");
+        System.out.println("\n\n\n");
 
         while (true) {
             System.out.println("\n");
@@ -210,7 +212,7 @@ public class MainApp {
                     if (tienda1 != null) {
                         System.out.println(ANSI_BOLD+ANSI_LIGHTGREEN+ANSI_UNDERLINE+"\n\uD83C\uDF3D  "+tienda1.getNombre().toUpperCase()+"  \uD83C\uDF57"+ANSI_RESET);
                         tienda1.getGestorProductos().ordenarComparacion();
-                        System.out.println(ANSI_ORANGE+"\nEl producto con mayor stock es: "+ANSI_RESET+ANSI_GREEN+ANSI_BOLD + tienda1.getGestorProductos().getStocks().get(tienda1.getGestorProductos().getStocks().size() - 1).getProducto().getNombre() +ANSI_RESET+ANSI_ORANGE+" con " +ANSI_RESET+ tienda1.getGestorProductos().getStocks().get(tienda1.getGestorProductos().getStocks().size() - 1).getCantidad() + ANSI_ORANGE+" unidades.");
+                        System.out.println(ANSI_ORANGE+"\nEl producto con mayor stock es "+ANSI_RESET+ANSI_GREEN+ANSI_BOLD + tienda1.getGestorProductos().getStocks().get(tienda1.getGestorProductos().getStocks().size() - 1).getProducto().getNombre() +ANSI_RESET+ANSI_ORANGE+" con " +ANSI_RESET+ tienda1.getGestorProductos().getStocks().get(tienda1.getGestorProductos().getStocks().size() - 1).getCantidad() + ANSI_ORANGE+" unidades.");
                     } else {
                         System.out.println("No se ha encontrado la tienda.");
                     }
@@ -221,6 +223,7 @@ public class MainApp {
                     // Implementar lógica para mostrar la tienda con mayor valor
                     double mayorValor = 0;
                     Tienda tiendaMayorValor = null;
+                    System.out.println(ANSI_BOLD+ANSI_LIGHTPINK+ANSI_UNDERLINE+"\n\uD83D\uDED2  TIENDAS  \uD83D\uDED2"+ANSI_RESET);
                     for (Tienda tienda2 : gestorTiendas.getTiendas()) {
                         double valorTienda = 0;
                         for (Stock stock2 : tienda2.getGestorProductos().getStocks()) {
@@ -230,18 +233,15 @@ public class MainApp {
                             mayorValor = valorTienda;
                             tiendaMayorValor = tienda2;
                         }
-                        System.out.println(tienda2.getNombre() + " ▸ " + valorTienda + " €");
+                        System.out.println(ANSI_BOLD+ANSI_LIGHTGREEN+tienda2.getNombre() +ANSI_RESET+ " ▸ " + ANSI_ITALIC+ANSI_LIGHTYELLOW+valorTienda + " €"+ANSI_RESET);
                     }
                     assert tiendaMayorValor != null;
-
-                    System.out.println(ANSI_ORANGE+"\nLa tienda con mayor valor es: " + tiendaMayorValor.getNombre() + " con " + mayorValor + " €.");
+                    System.out.println(ANSI_ORANGE+"\nLa tienda con mayor valor es: " +ANSI_BOLD+ANSI_LIGHTGREEN+ tiendaMayorValor.getNombre() +ANSI_RESET+ANSI_ORANGE+" con "+ANSI_LIGHTYELLOW+ANSI_ITALIC+ mayorValor +" €"+ANSI_RESET+ANSI_ORANGE+"."+ ANSI_RESET);
 
                     break;
 
                 case 6:
-                    // Mostrar toda la información de los productos de una tienda ordenada por stock. Para
-                    //ello se deberá implementar el algoritmo de la burbuja y otro algoritmo a elegir. Se
-                    //deberá mostrar el tiempo que tarda la aplicación en devolver la información.
+                    // Implementar lógica para mostrar información de productos ordenada por stock (BurbleSort y Comparación)
                     tituloTiendas();
                     gestorTiendas.mostrarNombreTiendas();
                     System.out.print(ANSI_RESET+"\nEscriba el nombre de la tienda para verla ordenada por stock: ");
@@ -250,9 +250,9 @@ public class MainApp {
 
                     if (tienda3 != null) {
                         System.out.println(ANSI_BOLD+ANSI_LIGHTGREEN+ANSI_UNDERLINE+"\n\uD83C\uDF3D  "+tienda3.getNombre().toUpperCase()+"  \uD83C\uDF57"+ANSI_RESET);
-                        System.out.println(ANSI_BOLD+ANSI_GREEN+"\n\uD83D\uDDEE  ORDENACIÓN POR BURBUJA  \uD83D\uDDEF"+ANSI_RESET);
+                        System.out.println("\n\uD83D\uDDEE  ORDENACIÓN POR BURBUJA  \uD83D\uDDEF"+ANSI_RESET);
                         tienda3.getGestorProductos().ordenarBurbuja();
-                        System.out.println(ANSI_BOLD+ANSI_GREEN+"\n✖ ❙ ✔  ORDENACIÓN POR COMPARACIÓN  ✔ ❙ ✖"+ANSI_RESET);
+                        System.out.println("\n✖ ❙ ✔  ORDENACIÓN POR COMPARACIÓN  ✔ ❙ ✖"+ANSI_RESET);
                         tienda3.getGestorProductos().ordenarComparacion();
                     } else {
                         System.out.println("No se ha encontrado la tienda.");
@@ -274,7 +274,13 @@ public class MainApp {
                     break;
                 case 8:
                     // Implementar lógica para salir de la aplicación
-                    System.out.println(ANSI_ORANGE+"Saliendo de la aplicación. ¡Hasta luego!");
+                    System.out.println(ANSI_PURPLE+"░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░█████╗░██╗░░██╗░█████╗░░█████╗░██╗░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░");
+                    System.out.println("░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░██╔══██╗██║░░██║██╔══██╗██╔══██╗██║░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░");
+                    System.out.println("░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░██║░░╚═╝███████║███████║██║░░██║██║░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░");
+                    System.out.println("░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░██║░░██╗██╔══██║██╔══██║██║░░██║╚═╝░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░");
+                    System.out.println("░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░╚█████╔╝██║░░██║██║░░██║╚█████╔╝██╗░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░");
+                    System.out.println("░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░╚════╝░╚═╝░░╚═╝╚═╝░░╚═╝░╚════╝░╚═╝░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░");
+                    System.out.println("░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░");
                     System.exit(0);
                 default:
                     System.out.println("Opción no válida. Por favor, seleccione una opción válida.");
