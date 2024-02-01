@@ -14,6 +14,9 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
+import static gestion.GestorTiendas.ANSI_RED;
+import static gestion.GestorTiendas.ANSI_RESET;
+
 public class GestorFicheros {
 
     ArrayList<Producto> productos;
@@ -174,18 +177,20 @@ public class GestorFicheros {
     private static String hacerSimulacion(Tienda tienda, GestorClientes gestorClientes) {
         StringBuilder simulationResults = new StringBuilder();
 
+        simulationResults.append("═════════════════════════════════════════════════════════\n");
         simulationResults.append("Resumen de venta de la tienda " + tienda.getNombre() + ":\n");
-        simulationResults.append("\n -= Clientes =- \n");
+        simulationResults.append("═════════════════════════════════════════════════════════\n");
+        simulationResults.append("\n ◀ Clientes ▶ \n");
         for (Cliente cliente : gestorClientes.getClientes()) {
-            simulationResults.append(cliente.getNombre() + "\n");
+            simulationResults.append("\uD83E\uDDCD "+cliente.getNombre() + "\n");
         }
-        simulationResults.append("\n -= Stock Inicial =- \n");
+        simulationResults.append("\n ◀ Stock Inicial ▶ \n");
         for (Stock stock : tienda.getGestorProductos().getStocks()) {
-            simulationResults.append(stock.getProducto().getNombre() + " - " + stock.getCantidad() + "\n");
+            simulationResults.append(stock.getProducto().getNombre() + " ▸ " + stock.getCantidad() + "\n");
         }
-        simulationResults.append("\n=============== INICIO DE LA SIMULACIÓN ===============\n");
+        simulationResults.append("\n\uD83D\uDCBB ═════════════ INICIO DE LA SIMULACIÓN ═════════════ \uD83D\uDCBB\n");
         for (Cliente cliente : gestorClientes.getClientes()) {
-            simulationResults.append("\n----- Cliente: " + cliente.getNombre() + " -----\n");
+            simulationResults.append("\n\uD83E\uDDCD ──────────── Cliente: " + cliente.getNombre() + " ────────────\n");
             simulationResults.append("Producto favorito: " + cliente.getProductoFavorito().getNombre() + "\n");
             simulationResults.append("Lista de la compra:\n");
             for (Producto producto : cliente.getListaCompra()) {
@@ -215,10 +220,10 @@ public class GestorFicheros {
             }
         }
         // Mostrar el stock restante
-        simulationResults.append("\n=============== FIN DE LA SIMULACIÓN ===============\n");
-        simulationResults.append("\n -= Stock restante =- \n");
+        simulationResults.append("\n\uD83D\uDCBB ═════════════ FIN DE LA SIMULACIÓN ═════════════ \uD83D\uDCBB\n");
+        simulationResults.append("\n ◀ Stock restante ▶ \n");
         for (Stock stock : tienda.getGestorProductos().getStocks()) {
-            simulationResults.append(stock.getProducto().getNombre() + " - " + stock.getCantidad() + "\n");
+            simulationResults.append(stock.getProducto().getNombre() + " ▸ " + stock.getCantidad() + "\n");
         }
 
         return simulationResults.toString();

@@ -5,6 +5,8 @@ import productos.Producto;
 
 import java.util.ArrayList;
 
+import static gestion.GestorTiendas.*;
+
 public class GestorProductos {
 
     private ArrayList<Stock> stocks;
@@ -68,7 +70,7 @@ public class GestorProductos {
 
     // ordenar con el algoritmo de la burbuja
     public void ordenarBurbuja() {
-        long startTime = System.nanoTime();
+        long inicio = System.nanoTime();
         for (int i = 0; i < stocks.size() - 1; i++) {
             for (int j = 0; j < stocks.size() - i - 1; j++) {
                 if (stocks.get(j).getCantidad() > stocks.get(j + 1).getCantidad()) {
@@ -78,25 +80,25 @@ public class GestorProductos {
                 }
             }
         }
-        long endTime = System.nanoTime();
+        long fin = System.nanoTime();
         // mostrar todos los stocks ordenados segun burbuja
         for (Stock stock : stocks) {
-            System.out.println(stock.getProducto().getNombre() + " : " + stock.getCantidad());
+            System.out.println(ANSI_GREEN+stock.getProducto().getNombre() +ANSI_RESET+ " ▸ " +ANSI_ITALIC+ stock.getCantidad()+ANSI_RESET);
         }
 
-        System.out.println("\nTiempo de ejecución del algoritmo de la burbuja: " + (endTime - startTime) + " nanosegundos");
+        System.out.println(ANSI_BLUE+"Tiempo de ejecución del algoritmo de burbuja: "+ANSI_RESET +ANSI_ITALIC+ANSI_CYAN+ (fin - inicio)+ANSI_RESET + ANSI_BLUE+" nanosegundos."+ANSI_RESET);
     }
 
-    // ordenar con otro algoritmo a elegir
-    public void ordenarOtro() {
-        long startTime = System.nanoTime();
+    // ordenar con otro algoritmo a elegir (comparación)
+    public void ordenarComparacion() {
+        long inicio = System.nanoTime();
         stocks.sort((stock1, stock2) -> stock1.getCantidad() - stock2.getCantidad());
-        long endTime = System.nanoTime();
+        long fin = System.nanoTime();
         // mostrar todos los stocks ordenados
         for (Stock stock : stocks) {
-            System.out.println(stock.getProducto().getNombre() + " : " + stock.getCantidad());
+            System.out.println(ANSI_GREEN + stock.getProducto().getNombre() + ANSI_RESET + " ▸ " + ANSI_ITALIC + stock.getCantidad() + ANSI_RESET);
         }
-        System.out.println("\nTiempo de ejecución del otro algoritmo: " + (endTime - startTime) + " nanosegundos");
+        System.out.println(ANSI_BLUE+"Tiempo de ejecución del algoritmo de comparación: "+ANSI_RESET +ANSI_ITALIC+ANSI_CYAN+ (fin - inicio)+ANSI_RESET + ANSI_BLUE+" nanosegundos."+ANSI_RESET);
     }
 
 

@@ -24,12 +24,17 @@ public class MainApp {
     public static final String ANSI_PURPLE = "\u001B[35m";
     public static final String ANSI_CYAN = "\u001B[36m";
     public static final String ANSI_WHITE = "\u001B[37m";
+    public static final String ANSI_ORANGE = "\u001B[38;5;208m";
     public static final String ANSI_RESET = "\u001B[0m";
     public static final String ANSI_BOLD = "\u001B[1m";
     public static final String ANSI_ITALIC = "\u001B[3m";
     public static final String ANSI_UNDERLINE = "\u001B[4m";
     public static final String ANSI_BLINK = "\u001B[5m";
     public static final String ANSI_INVERSE = "\u001b[7m";
+    public static final String ANSI_LIGHTGREEN = "\u001b[92m";
+    public static final String ANSI_LIGHTPINK = "\u001b[95m";
+    public static final String ANSI_PINK = "\u001b[38;5;206m";
+
 
     public static void main(String[] args) {
         // Crear instancias de gestores y tiendas
@@ -48,52 +53,51 @@ public class MainApp {
 
         while (true) {
             System.out.println("\n");
-            System.out.println(ANSI_PURPLE+"░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░");
-            System.out.println("░░░█████╗░░█████╗░███╗░░░███╗███████╗██████╗░░█████╗░██╗░█████╗░░░░░░░░░░░░░░██╗░█████╗░██╗░░░██╗░█████╗░░░");
-            System.out.println("░░██╔══██╗██╔══██╗████╗░████║██╔════╝██╔══██╗██╔══██╗██║██╔══██╗░░░░░░░░░░░░░██║██╔══██╗██║░░░██║██╔══██╗░░");
-            System.out.println("░░██║░░╚═╝██║░░██║██╔████╔██║█████╗░░██████╔╝██║░░╚═╝██║██║░░██║░░░░░░░░░░░░░██║███████║╚██╗░██╔╝███████║░░");
-            System.out.println("░░██║░░██╗██║░░██║██║╚██╔╝██║██╔══╝░░██╔══██╗██║░░██╗██║██║░░██║░░░░░░░░██╗░░██║██╔══██║░╚████╔╝░██╔══██║░░");
-            System.out.println("░░╚█████╔╝╚█████╔╝██║░╚═╝░██║███████╗██║░░██║╚█████╔╝██║╚█████╔╝░░░░░░░░╚█████╔╝██║░░██║░░╚██╔╝░░██║░░██║░░");
-            System.out.println("░░░╚════╝░░╚════╝░╚═╝░░░░░╚═╝╚══════╝╚═╝░░╚═╝░╚════╝░╚═╝░╚════╝░░░░░░░░░░╚════╝░╚═╝░░╚═╝░░░╚═╝░░░╚═╝░░╚═╝░░");
-            System.out.println("░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░");
-            System.out.println("░░░░░░░░░░░░░░░░░░░░░░░"+ANSI_CYAN+" ╔═════════════════════════════════════════════════════════╗"+ANSI_PURPLE+" ░░░░░░░░░░░░░░░░░░░░░░░");
-            System.out.println("░░░░░░░░░░░░░░░░░░░░░░░"+ANSI_CYAN+" ║                      "+ANSI_BOLD+"MENÚ PRINCIPAL"+ANSI_RESET+ANSI_CYAN+"                     ║"+ANSI_PURPLE+" ░░░░░░░░░░░░░░░░░░░░░░░");
-            System.out.println("░░░░░░░░░░░░░░░░░░░░░░░"+ANSI_CYAN+" ╠═════════════════════════════════════════════════════════╣"+ANSI_PURPLE+" ░░░░░░░░░░░░░░░░░░░░░░░");
-            System.out.println("░░░░░░░░░░░░░░░░░░░░░░░"+ANSI_CYAN+" ║ "+ANSI_BOLD+"1."+ANSI_RESET+" Añadir stock de un producto a una tienda.           "+ANSI_CYAN+" ║"+ANSI_PURPLE+" ░░░░░░░░░░░░░░░░░░░░░░░");
-            System.out.println("░░░░░░░░░░░░░░░░░░░░░░░"+ANSI_CYAN+" ║ "+ANSI_BOLD+"2."+ANSI_RESET+" Eliminar stock de un producto de una tienda.        "+ANSI_CYAN+" ║"+ANSI_PURPLE+" ░░░░░░░░░░░░░░░░░░░░░░░");
-            System.out.println("░░░░░░░░░░░░░░░░░░░░░░░"+ANSI_CYAN+" ║ "+ANSI_BOLD+"3."+ANSI_RESET+" Buscar un producto en una tienda (mostrará el stock)."+ANSI_CYAN+"║"+ANSI_PURPLE+" ░░░░░░░░░░░░░░░░░░░░░░░");
-            System.out.println("░░░░░░░░░░░░░░░░░░░░░░░"+ANSI_CYAN+" ║ "+ANSI_BOLD+"4."+ANSI_RESET+" Mostrar el producto con mayor stock de una tienda.  "+ANSI_CYAN+" ║"+ANSI_PURPLE+" ░░░░░░░░░░░░░░░░░░░░░░░");
-            System.out.println("░░░░░░░░░░░░░░░░░░░░░░░"+ANSI_CYAN+" ║ "+ANSI_BOLD+"5."+ANSI_RESET+" Mostrar la tienda con mayor valor. (Q x €)          "+ANSI_CYAN+" ║"+ANSI_PURPLE+" ░░░░░░░░░░░░░░░░░░░░░░░");
-            System.out.println("░░░░░░░░░░░░░░░░░░░░░░░"+ANSI_CYAN+" ║ "+ANSI_BOLD+"6."+ANSI_RESET+" Mostrar información de productos ordenada por stock."+ANSI_CYAN+" ║"+ANSI_PURPLE+" ░░░░░░░░░░░░░░░░░░░░░░░");
-            System.out.println("░░░░░░░░░░░░░░░░░░░░░░░"+ANSI_CYAN+" ║ "+ANSI_BOLD+"7."+ANSI_RESET+" Ejecutar simulación de venta.                       "+ANSI_CYAN+" ║"+ANSI_PURPLE+" ░░░░░░░░░░░░░░░░░░░░░░░");
-            System.out.println("░░░░░░░░░░░░░░░░░░░░░░░"+ANSI_CYAN+" ║ "+ANSI_BOLD+"8."+ANSI_RESET+" Salir.                                              "+ANSI_CYAN+" ║"+ANSI_PURPLE+" ░░░░░░░░░░░░░░░░░░░░░░░");
-            System.out.println("░░░░░░░░░░░░░░░░░░░░░░░"+ANSI_CYAN+" ╠═════════════════════════════════════════════════════════╣"+ANSI_PURPLE+" ░░░░░░░░░░░░░░░░░░░░░░░");
-            System.out.println("░░░░░░░░░░░░░░░░░░░░░░░"+ANSI_CYAN+" ║ Seleccione una opción:                                  ║"+ANSI_PURPLE+" ░░░░░░░░░░░░░░░░░░░░░░░");
-            System.out.println("░░░░░░░░░░░░░░░░░░░░░░░"+ANSI_CYAN+" ╚═════════════════════════════════════════════════════════╝"+ANSI_PURPLE+" ░░░░░░░░░░░░░░░░░░░░░░░");
-            System.out.println("░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░");
+            System.out.println(ANSI_PURPLE+"░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░");
+            System.out.println("░░░░░█████╗░░█████╗░███╗░░░███╗███████╗██████╗░░█████╗░██╗░█████╗░░░░░░░░░░░░░░██╗░█████╗░██╗░░░██╗░█████╗░░░░░");
+            System.out.println("░░░░██╔══██╗██╔══██╗████╗░████║██╔════╝██╔══██╗██╔══██╗██║██╔══██╗░░░░░░░░░░░░░██║██╔══██╗██║░░░██║██╔══██╗░░░░");
+            System.out.println("░░░░██║░░╚═╝██║░░██║██╔████╔██║█████╗░░██████╔╝██║░░╚═╝██║██║░░██║░░░░░░░░░░░░░██║███████║╚██╗░██╔╝███████║░░░░");
+            System.out.println("░░░░██║░░██╗██║░░██║██║╚██╔╝██║██╔══╝░░██╔══██╗██║░░██╗██║██║░░██║░░░░░░░░██╗░░██║██╔══██║░╚████╔╝░██╔══██║░░░░");
+            System.out.println("░░░░╚█████╔╝╚█████╔╝██║░╚═╝░██║███████╗██║░░██║╚█████╔╝██║╚█████╔╝░░░░░░░░╚█████╔╝██║░░██║░░╚██╔╝░░██║░░██║░░░░");
+            System.out.println("░░░░░╚════╝░░╚════╝░╚═╝░░░░░╚═╝╚══════╝╚═╝░░╚═╝░╚════╝░╚═╝░╚════╝░░░░░░░░░░╚════╝░╚═╝░░╚═╝░░░╚═╝░░░╚═╝░░╚═╝░░░░");
+            System.out.println("░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░");
+            System.out.println("░░░░░░░░░░░░░░░░░░░░░░░░░"+ANSI_CYAN+" ╔═════════════════════════════════════════════════════════╗"+ANSI_PURPLE+" ░░░░░░░░░░░░░░░░░░░░░░░░░");
+            System.out.println("░░░░░░░░░░░░░░░░░░░░░░░░░"+ANSI_CYAN+" ║                      "+ANSI_BOLD+"MENÚ PRINCIPAL"+ANSI_RESET+ANSI_CYAN+"                     ║"+ANSI_PURPLE+" ░░░░░░░░░░░░░░░░░░░░░░░░░");
+            System.out.println("░░░░░░░░░░░░░░░░░░░░░░░░░"+ANSI_CYAN+" ╠═════════════════════════════════════════════════════════╣"+ANSI_PURPLE+" ░░░░░░░░░░░░░░░░░░░░░░░░░");
+            System.out.println("░░░░░░░░░░░░░░░░░░░░░░░░░"+ANSI_CYAN+" ║ "+ANSI_BOLD+"1."+ANSI_RESET+" Añadir stock de un producto a una tienda.           "+ANSI_CYAN+" ║"+ANSI_PURPLE+" ░░░░░░░░░░░░░░░░░░░░░░░░░");
+            System.out.println("░░░░░░░░░░░░░░░░░░░░░░░░░"+ANSI_CYAN+" ║ "+ANSI_BOLD+"2."+ANSI_RESET+" Eliminar stock de un producto de una tienda.        "+ANSI_CYAN+" ║"+ANSI_PURPLE+" ░░░░░░░░░░░░░░░░░░░░░░░░░");
+            System.out.println("░░░░░░░░░░░░░░░░░░░░░░░░░"+ANSI_CYAN+" ║ "+ANSI_BOLD+"3."+ANSI_RESET+" Buscar un producto en una tienda (mostrará el stock)."+ANSI_CYAN+"║"+ANSI_PURPLE+" ░░░░░░░░░░░░░░░░░░░░░░░░░");
+            System.out.println("░░░░░░░░░░░░░░░░░░░░░░░░░"+ANSI_CYAN+" ║ "+ANSI_BOLD+"4."+ANSI_RESET+" Mostrar el producto con mayor stock de una tienda.  "+ANSI_CYAN+" ║"+ANSI_PURPLE+" ░░░░░░░░░░░░░░░░░░░░░░░░░");
+            System.out.println("░░░░░░░░░░░░░░░░░░░░░░░░░"+ANSI_CYAN+" ║ "+ANSI_BOLD+"5."+ANSI_RESET+" Mostrar la tienda con mayor valor. (Q x €)          "+ANSI_CYAN+" ║"+ANSI_PURPLE+" ░░░░░░░░░░░░░░░░░░░░░░░░░");
+            System.out.println("░░░░░░░░░░░░░░░░░░░░░░░░░"+ANSI_CYAN+" ║ "+ANSI_BOLD+"6."+ANSI_RESET+" Mostrar información de productos ordenada por stock."+ANSI_CYAN+" ║"+ANSI_PURPLE+" ░░░░░░░░░░░░░░░░░░░░░░░░░");
+            System.out.println("░░░░░░░░░░░░░░░░░░░░░░░░░"+ANSI_CYAN+" ║ "+ANSI_BOLD+"7."+ANSI_RESET+" Ejecutar simulación de venta.                       "+ANSI_CYAN+" ║"+ANSI_PURPLE+" ░░░░░░░░░░░░░░░░░░░░░░░░░");
+            System.out.println("░░░░░░░░░░░░░░░░░░░░░░░░░"+ANSI_CYAN+" ║ "+ANSI_BOLD+"8."+ANSI_RESET+" Salir.                                              "+ANSI_CYAN+" ║"+ANSI_PURPLE+" ░░░░░░░░░░░░░░░░░░░░░░░░░");
+            System.out.println("░░░░░░░░░░░░░░░░░░░░░░░░░"+ANSI_CYAN+" ╠═════════════════════════════════════════════════════════╣"+ANSI_PURPLE+" ░░░░░░░░░░░░░░░░░░░░░░░░░");
+            System.out.println("░░░░░░░░░░░░░░░░░░░░░░░░░"+ANSI_CYAN+" ║ Seleccione una opción:                                  ║"+ANSI_PURPLE+" ░░░░░░░░░░░░░░░░░░░░░░░░░");
+            System.out.println("░░░░░░░░░░░░░░░░░░░░░░░░░"+ANSI_CYAN+" ╚═════════════════════════════════════════════════════════╝"+ANSI_PURPLE+" ░░░░░░░░░░░░░░░░░░░░░░░░░");
+            System.out.println("░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░");
             int opcion = scanner.nextInt();
             scanner.nextLine(); // Consumir la nueva línea después de leer el número
-            System.out.println("░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░");
-            System.out.println("░░░░░░░░░░░░░░░░░░░░░░░"+ANSI_CYAN+" ╔═════════════════════════════════════════════════════════╗"+ANSI_PURPLE+" ░░░░░░░░░░░░░░░░░░░░░░░");
-            System.out.println("░░░░░░░░░░░░░░░░░░░░░░░"+ANSI_CYAN+" ║ "+ANSI_YELLOW+ANSI_BOLD+"Opción seleccionada: "+ANSI_RESET+ANSI_ITALIC+ANSI_YELLOW+opcion+ANSI_CYAN+"                                  ║"+ANSI_PURPLE+" ░░░░░░░░░░░░░░░░░░░░░░░");
-            System.out.println("░░░░░░░░░░░░░░░░░░░░░░░"+ANSI_CYAN+" ╚═════════════════════════════════════════════════════════╝"+ANSI_PURPLE+" ░░░░░░░░░░░░░░░░░░░░░░░");
-            System.out.println("░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░"+ANSI_RESET);
+            System.out.println("░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░");
+            System.out.println("░░░░░░░░░░░░░░░░░░░░░░░░░"+ANSI_CYAN+" ╔═════════════════════════════════════════════════════════╗"+ANSI_PURPLE+" ░░░░░░░░░░░░░░░░░░░░░░░░░");
+            System.out.println("░░░░░░░░░░░░░░░░░░░░░░░░░"+ANSI_CYAN+" ║ "+ANSI_YELLOW+ANSI_BOLD+"Opción seleccionada: "+ANSI_RESET+ANSI_ITALIC+ANSI_YELLOW+opcion+ANSI_CYAN+"                                  ║"+ANSI_PURPLE+" ░░░░░░░░░░░░░░░░░░░░░░░░░");
+            System.out.println("░░░░░░░░░░░░░░░░░░░░░░░░░"+ANSI_CYAN+" ╚═════════════════════════════════════════════════════════╝"+ANSI_PURPLE+" ░░░░░░░░░░░░░░░░░░░░░░░░░");
+            System.out.println("░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░"+ANSI_RESET);
 
 
             switch (opcion) {
                 case 1:
                     // Implementar lógica para añadir un stock de un producto a una tienda
-                    System.out.println("\nSeleccione una tienda para añadir un producto: ");
+                    tituloTiendas();
                     gestorTiendas.mostrarNombreTiendas();
                     System.out.print("\nEscriba el nombre de la tienda: ");
                     String nombreTienda = scanner.nextLine();
                     Tienda tienda = gestorTiendas.buscarTienda(nombreTienda);
                     if (tienda != null) {
-                        System.out.println(ANSI_BOLD+ANSI_GREEN+ANSI_UNDERLINE+"\n\uD83C\uDF3D  "+tienda.getNombre().toUpperCase()+"  \uD83C\uDF57"+ANSI_RESET);
-                        System.out.println(ANSI_YELLOW+"\uD83E\uDC7B"+ANSI_ITALIC+"  producto  -  cantidad  "+ANSI_RESET+ANSI_YELLOW+"\uD83E\uDC7B"+ANSI_RESET);
+                        System.out.println(ANSI_BOLD+ANSI_LIGHTGREEN+ANSI_UNDERLINE+"\n\uD83C\uDF3D  "+tienda.getNombre().toUpperCase()+"  \uD83C\uDF57"+ANSI_RESET);
                         tienda.getGestorProductos().getStocks().sort((stock1, stock2) -> stock1.getCantidad() - stock2.getCantidad());
                         for (Stock stock : tienda.getGestorProductos().getStocks()) {
-                            System.out.println(stock.getProducto().getNombre() + " - " + stock.getCantidad());
+                            System.out.println(ANSI_BOLD+ANSI_GREEN+stock.getProducto().getNombre() +ANSI_RESET+ " ▸ " +ANSI_ITALIC+ stock.getCantidad()+ANSI_RESET);
                         }
                         System.out.print("\nEscriba el nombre del producto al que quiere añadir stock: ");
                         String nombreProducto = scanner.nextLine();
@@ -105,29 +109,29 @@ public class MainApp {
 
                             Stock stockExistente = tienda.getGestorProductos().buscarProductoSecuencial(nombreProducto);
                             stockExistente.setCantidad(stockExistente.getCantidad() + cantidad);
-
+                            System.out.println(ANSI_ORANGE+"\nSe ha añadido el stock del producto "+ANSI_GREEN+stockExistente.getProducto().getNombre()+ANSI_RESET+ANSI_ORANGE+", ahora tiene "+ANSI_RESET+ANSI_ITALIC+stockExistente.getCantidad()+ANSI_RESET+ANSI_ORANGE+" unidades restantes."+ANSI_RESET);
                         } else {
                             System.out.println("No se ha encontrado el producto.");
                         }
                     } else {
                         System.out.println("No se ha encontrado la tienda.");
                     }
+
                     break;
 
                 case 2:
                     // Implementar lógica para eliminar stock de un producto de una tienda
-                    System.out.println("\nSeleccione una tienda para añadir un producto: ");
+                    tituloTiendas();
                     gestorTiendas.mostrarNombreTiendas();
-                    System.out.print("\nEscriba el nombre de la tienda: ");
+                    System.out.print(ANSI_RESET+"\nEscriba el nombre de la tienda: ");
                     String nombreTiendaEliminar = scanner.nextLine();
                     Tienda tiendaEliminar = gestorTiendas.buscarTienda(nombreTiendaEliminar);
                     // mostrar los productos de la tienda con su stock
                     if (tiendaEliminar != null) {
-                        System.out.println(ANSI_BOLD+ANSI_GREEN+ANSI_UNDERLINE+"\n\uD83C\uDF3D  "+tiendaEliminar.getNombre().toUpperCase()+"  \uD83C\uDF57"+ANSI_RESET);
-                        System.out.println(ANSI_YELLOW+"\uD83E\uDC7B"+ANSI_ITALIC+"  producto  -  cantidad  "+ANSI_RESET+ANSI_YELLOW+"\uD83E\uDC7B"+ANSI_RESET);
+                        System.out.println(ANSI_BOLD+ANSI_LIGHTGREEN+ANSI_UNDERLINE+"\n\uD83C\uDF3D  "+tiendaEliminar.getNombre().toUpperCase()+"  \uD83C\uDF57"+ANSI_RESET);
                         tiendaEliminar.getGestorProductos().getStocks().sort((stock1, stock2) -> stock1.getCantidad() - stock2.getCantidad());
                         for (Stock stock2 : tiendaEliminar.getGestorProductos().getStocks()) {
-                            System.out.println(stock2.getProducto().getNombre() + " - " + stock2.getCantidad());
+                            System.out.println(ANSI_GREEN+stock2.getProducto().getNombre() +ANSI_RESET+ " ▸ " +ANSI_ITALIC+ stock2.getCantidad()+ANSI_RESET);
                         }
                     } else {
                         System.out.println("No se ha encontrado la tienda.");
@@ -147,6 +151,7 @@ public class MainApp {
                             if (stockExistente.getCantidad() < 0) {
                                 stockExistente.setCantidad(0);
                             }
+                            System.out.println(ANSI_ORANGE+"\nSe ha eliminado el stock del producto "+ANSI_GREEN+stockExistente.getProducto().getNombre()+ANSI_RESET+ANSI_ORANGE+", ahora tiene "+ANSI_RESET+ANSI_ITALIC+stockExistente.getCantidad()+ANSI_RESET+ANSI_ORANGE+" unidades restantes."+ANSI_RESET);
                         } else {
                             System.out.println("No se ha encontrado el producto.");
                         }
@@ -157,9 +162,9 @@ public class MainApp {
 
                 case 3:
                     // Implementar lógica para buscar un producto en una tienda (mostrará el stock disponible)
-                    System.out.println("\nSeleccione una tienda para buscar un producto: ");
+                    tituloTiendas();
                     gestorTiendas.mostrarNombreTiendas();
-                    System.out.print("\nEscriba el nombre de la tienda: ");
+                    System.out.print(ANSI_RESET+"\nEscriba el nombre de la tienda para buscar el producto: ");
                     String nombreTiendaBusqueda = scanner.nextLine();
                     System.out.print("\nEscriba el nombre del producto: ");
                     String nombreProductoBusqueda = scanner.nextLine();
@@ -167,6 +172,7 @@ public class MainApp {
                     // Buscar la tienda
                     Tienda tiendaBusqueda = gestorTiendas.buscarTienda(nombreTiendaBusqueda);
                     if (tiendaBusqueda != null) {
+                        System.out.println(ANSI_BOLD+ANSI_LIGHTGREEN+ANSI_UNDERLINE+"\n\uD83C\uDF3D  "+tiendaBusqueda.getNombre().toUpperCase()+"  \uD83C\uDF57"+ANSI_RESET);
                         // Realizar la búsqueda secuencial
                         long inicioSecuencial = System.nanoTime();
                         Stock stockSecuencial = tiendaBusqueda.getGestorProductos().buscarProductoSecuencial(nombreProductoBusqueda);
@@ -179,15 +185,15 @@ public class MainApp {
 
                         // Mostrar los resultados
                         if (stockSecuencial != null) {
-                            System.out.println("\nBúsqueda secuencial: El producto " + nombreProductoBusqueda + " tiene un stock de " + stockSecuencial.getCantidad() + ". Tiempo de búsqueda: " + (finSecuencial - inicioSecuencial) + " nanosegundos.");
+                            System.out.println(ANSI_YELLOW+ANSI_BOLD+"Búsqueda secuencial:"+ANSI_RESET+ANSI_ORANGE+" El producto "+ANSI_GREEN + nombreProductoBusqueda + ANSI_ORANGE+" tiene un stock de "+ANSI_RESET + stockSecuencial.getCantidad() +ANSI_ORANGE+ ". "+ ANSI_BLUE+"Tiempo de búsqueda: " +ANSI_RESET+ ANSI_CYAN+ ANSI_ITALIC + (finSecuencial - inicioSecuencial) +ANSI_RESET+ ANSI_BLUE+" nanosegundos.");
                         } else {
-                            System.out.println("\nBúsqueda secuencial: El producto " + nombreProductoBusqueda + " no se encontró. Tiempo de búsqueda: " + (finSecuencial - inicioSecuencial) + " nanosegundos.");
+                            System.out.println(ANSI_YELLOW+ANSI_BOLD+"Búsqueda secuencial:"+ANSI_RESET+ANSI_ORANGE+" El producto "+ANSI_GREEN + nombreProductoBusqueda + ANSI_ORANGE+" no se encontró. "+ANSI_BLUE+"Tiempo de búsqueda: "+ANSI_RESET + ANSI_CYAN+ ANSI_ITALIC+ (finSecuencial - inicioSecuencial) +ANSI_RESET+ ANSI_BLUE+" nanosegundos.");
                         }
 
                         if (stockBinaria != null) {
-                            System.out.println("\nBúsqueda binaria: El producto " + nombreProductoBusqueda + " tiene un stock de " + stockBinaria.getCantidad() + ". Tiempo de búsqueda: " + (finBinaria - inicioBinaria) + " nanosegundos.");
+                            System.out.println(ANSI_YELLOW+ANSI_BOLD+"Búsqueda binaria:"+ANSI_RESET+ANSI_ORANGE+" El producto "+ANSI_GREEN + nombreProductoBusqueda + ANSI_ORANGE+" tiene un stock de "+ANSI_RESET + stockBinaria.getCantidad() +ANSI_ORANGE+ ". "+ ANSI_BLUE+"Tiempo de búsqueda: " +ANSI_RESET+ ANSI_CYAN+ ANSI_ITALIC + (finBinaria - inicioBinaria) +ANSI_RESET+ ANSI_BLUE+" nanosegundos.");
                         } else {
-                            System.out.println("\nBúsqueda binaria: El producto " + nombreProductoBusqueda + " no se encontró. Tiempo de búsqueda: " + (finBinaria - inicioBinaria) + " nanosegundos.");
+                            System.out.println(ANSI_YELLOW+ANSI_BOLD+"Búsqueda binaria:"+ANSI_RESET+ANSI_ORANGE+" El producto "+ANSI_GREEN + nombreProductoBusqueda + ANSI_ORANGE+" no se encontró. "+ ANSI_BLUE  +"Tiempo de búsqueda: "+ANSI_RESET+ ANSI_CYAN+ ANSI_ITALIC + (finBinaria - inicioBinaria) +ANSI_RESET+ ANSI_BLUE+" nanosegundos.");
                         }
                     } else {
                         System.out.println("No se ha encontrado la tienda.");
@@ -196,14 +202,15 @@ public class MainApp {
 
                 case 4:
                     // Implementar lógica para mostrar el producto con mayor stock de una tienda
-                    System.out.println("\nSeleccione una tienda para ver su producto con mayor stock: ");
+                    tituloTiendas();
                     gestorTiendas.mostrarNombreTiendas();
-                    System.out.print("\nEscriba el nombre de la tienda: ");
+                    System.out.print(ANSI_RESET+"\nEscriba el nombre de la tienda para ver el producto de mayor stock de esta: ");
                     String nombreTienda1 = scanner.nextLine();
                     Tienda tienda1 = gestorTiendas.buscarTienda(nombreTienda1);
                     if (tienda1 != null) {
-                        tienda1.getGestorProductos().getStocks().sort((stock1, stock2) -> stock1.getCantidad() - stock2.getCantidad());
-                        System.out.println("\nEl producto con mayor stock es: " + tienda1.getGestorProductos().getStocks().get(tienda1.getGestorProductos().getStocks().size() - 1).getProducto().getNombre() + " con " + tienda1.getGestorProductos().getStocks().get(tienda1.getGestorProductos().getStocks().size() - 1).getCantidad() + " unidades.");
+                        System.out.println(ANSI_BOLD+ANSI_LIGHTGREEN+ANSI_UNDERLINE+"\n\uD83C\uDF3D  "+tienda1.getNombre().toUpperCase()+"  \uD83C\uDF57"+ANSI_RESET);
+                        tienda1.getGestorProductos().ordenarComparacion();
+                        System.out.println(ANSI_ORANGE+"\nEl producto con mayor stock es: "+ANSI_RESET+ANSI_GREEN+ANSI_BOLD + tienda1.getGestorProductos().getStocks().get(tienda1.getGestorProductos().getStocks().size() - 1).getProducto().getNombre() +ANSI_RESET+ANSI_ORANGE+" con " +ANSI_RESET+ tienda1.getGestorProductos().getStocks().get(tienda1.getGestorProductos().getStocks().size() - 1).getCantidad() + ANSI_ORANGE+" unidades.");
                     } else {
                         System.out.println("No se ha encontrado la tienda.");
                     }
@@ -223,11 +230,11 @@ public class MainApp {
                             mayorValor = valorTienda;
                             tiendaMayorValor = tienda2;
                         }
-                        System.out.println(tienda2.getNombre() + " - " + valorTienda + " €");
+                        System.out.println(tienda2.getNombre() + " ▸ " + valorTienda + " €");
                     }
                     assert tiendaMayorValor != null;
 
-                    System.out.println("\nLa tienda con mayor valor es: " + tiendaMayorValor.getNombre() + " con " + mayorValor + " €.");
+                    System.out.println(ANSI_ORANGE+"\nLa tienda con mayor valor es: " + tiendaMayorValor.getNombre() + " con " + mayorValor + " €.");
 
                     break;
 
@@ -235,14 +242,18 @@ public class MainApp {
                     // Mostrar toda la información de los productos de una tienda ordenada por stock. Para
                     //ello se deberá implementar el algoritmo de la burbuja y otro algoritmo a elegir. Se
                     //deberá mostrar el tiempo que tarda la aplicación en devolver la información.
-                    System.out.println("\nSeleccione una tienda para ver sus productos ordenados por stock: ");
+                    tituloTiendas();
                     gestorTiendas.mostrarNombreTiendas();
-                    System.out.print("\nEscriba el nombre de la tienda: ");
+                    System.out.print(ANSI_RESET+"\nEscriba el nombre de la tienda para verla ordenada por stock: ");
                     String nombreTienda3 = scanner.nextLine();
                     Tienda tienda3 = gestorTiendas.buscarTienda(nombreTienda3);
+
                     if (tienda3 != null) {
+                        System.out.println(ANSI_BOLD+ANSI_LIGHTGREEN+ANSI_UNDERLINE+"\n\uD83C\uDF3D  "+tienda3.getNombre().toUpperCase()+"  \uD83C\uDF57"+ANSI_RESET);
+                        System.out.println(ANSI_BOLD+ANSI_GREEN+"\n\uD83D\uDDEE  ORDENACIÓN POR BURBUJA  \uD83D\uDDEF"+ANSI_RESET);
                         tienda3.getGestorProductos().ordenarBurbuja();
-                        tienda3.getGestorProductos().ordenarOtro();
+                        System.out.println(ANSI_BOLD+ANSI_GREEN+"\n✖ ❙ ✔  ORDENACIÓN POR COMPARACIÓN  ✔ ❙ ✖"+ANSI_RESET);
+                        tienda3.getGestorProductos().ordenarComparacion();
                     } else {
                         System.out.println("No se ha encontrado la tienda.");
                     }
@@ -251,23 +262,39 @@ public class MainApp {
 
                 case 7:
                     // Implementar lógica para ejecutar la simulación de venta de una tienda.
-                    System.out.println("\nSeleccione una tienda para ejecutar la simulación de venta: ");
+                    tituloTiendas();
                     gestorTiendas.mostrarNombreTiendas();
-                    System.out.print("\nEscriba el nombre de la tienda: ");
+                    System.out.print(ANSI_RESET+"\nEscriba el nombre de la tienda para ejecutar la simulación: ");
                     String nombreTienda4 = scanner.nextLine();
                     Tienda tienda4 = gestorTiendas.buscarTienda(nombreTienda4);
+                    System.out.println(ANSI_BOLD+ANSI_LIGHTGREEN+ANSI_UNDERLINE+"\n\uD83C\uDF3D  "+tienda4.getNombre().toUpperCase()+"  \uD83C\uDF57"+ANSI_RESET);
                     GestorFicheros.exportarSimulacion(tienda4, gestorClientes);
-
+                    System.out.println(ANSI_PINK+"\uD83D\uDCE4 EXPORTANDO SIMULACIÓN... \uD83D\uDCE4"+ANSI_RESET);
+                    System.out.println(ANSI_BOLD+ANSI_LIGHTPINK+"\uD83D\uDDF8 SIMULACIÓN EXPORTADA CON ÉXITO \uD83D\uDDF8"+ANSI_RESET);
                     break;
                 case 8:
                     // Implementar lógica para salir de la aplicación
-                    System.out.println("Saliendo de la aplicación. ¡Hasta luego!");
+                    System.out.println(ANSI_ORANGE+"Saliendo de la aplicación. ¡Hasta luego!");
                     System.exit(0);
                 default:
                     System.out.println("Opción no válida. Por favor, seleccione una opción válida.");
             }
         }
 
+    }
+
+    public static void tituloTiendas(){
+        System.out.println(ANSI_YELLOW+ "\n" +
+                "8888888 8888888888  8 8888 8 8888888888   b.             8 8 888888888o.            .8.            d888888o.   \n" +
+                "      8 8888        8 8888 8 8888         888o.          8 8 8888    `^888.        .888.         .`8888:' `88. \n" +
+                "      8 8888        8 8888 8 8888         Y88888o.       8 8 8888        `88.     :88888.        8.`8888.   Y8 \n" +
+                "      8 8888        8 8888 8 8888         .`Y888888o.    8 8 8888         `88    . `88888.       `8.`8888.     \n" +
+                "      8 8888        8 8888 8 888888888888 8o. `Y888888o. 8 8 8888          88   .8. `88888.       `8.`8888.    \n" +
+                "      8 8888        8 8888 8 8888         8`Y8o. `Y88888o8 8 8888          88  .8`8. `88888.       `8.`8888.   \n" +
+                "      8 8888        8 8888 8 8888         8   `Y8o. `Y8888 8 8888         ,88 .8' `8. `88888.       `8.`8888.  \n" +
+                "      8 8888        8 8888 8 8888         8      `Y8o. `Y8 8 8888        ,88'.8'   `8. `88888.  8b   `8.`8888. \n" +
+                "      8 8888        8 8888 8 8888         8         `Y8o.` 8 8888    ,o88P' .888888888. `88888. `8b.  ;8.`8888 \n" +
+                "      8 8888        8 8888 8 888888888888 8            `Yo 8 888888888P'   .8'       `8. `88888. `Y8888P ,88P' \n" );
     }
 
 
