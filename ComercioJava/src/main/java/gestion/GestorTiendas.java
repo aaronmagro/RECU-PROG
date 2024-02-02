@@ -7,20 +7,13 @@ import productos.Producto;
 import java.util.ArrayList;
 
 public class GestorTiendas {
-    public static final String ANSI_BLACK = "\u001B[30m";
-    public static final String ANSI_RED = "\u001B[31m";
     public static final String ANSI_GREEN = "\u001B[32m";
     public static final String ANSI_YELLOW = "\u001B[33m";
     public static final String ANSI_BLUE = "\u001B[34m";
-    public static final String ANSI_PURPLE = "\u001B[35m";
     public static final String ANSI_CYAN = "\u001B[36m";
-    public static final String ANSI_WHITE = "\u001B[37m";
     public static final String ANSI_RESET = "\u001B[0m";
     public static final String ANSI_BOLD = "\u001B[1m";
     public static final String ANSI_ITALIC = "\u001B[3m";
-    public static final String ANSI_UNDERLINE = "\u001B[4m";
-    public static final String ANSI_BLINK = "\u001B[5m";
-    public static final String ANSI_INVERSE = "\u001b[7m";
 
     private ArrayList<Tienda> tiendas;
     private GestorProductos gestorProductos;
@@ -42,7 +35,7 @@ public class GestorTiendas {
     public void mostrarNombreTiendas() {
         for (int i = 0; i < tiendas.size(); i++) {
 
-            System.out.println(ANSI_YELLOW+" ✧ "+ANSI_RESET+tiendas.get(i).getNombre()+ANSI_RESET);
+            System.out.println(ANSI_YELLOW+ANSI_BOLD+" ✧ "+ANSI_RESET+tiendas.get(i).getNombre()+ANSI_RESET);
         }
     }
 

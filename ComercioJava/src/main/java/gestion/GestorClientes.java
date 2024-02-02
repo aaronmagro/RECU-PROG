@@ -1,7 +1,6 @@
 package gestion;
 
 import local.manejo.Cliente;
-import local.manejo.Tienda;
 
 import java.util.ArrayList;
 

@@ -14,9 +14,6 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
-import static gestion.GestorTiendas.ANSI_RED;
-import static gestion.GestorTiendas.ANSI_RESET;
-
 public class GestorFicheros {
 
     ArrayList<Producto> productos;
@@ -160,68 +157,111 @@ public class GestorFicheros {
         return new String[] {};
     }
 
-    public static void exportarSimulacion(Tienda tienda, GestorClientes gestorClientes) {
+    public void exportarSimulacion(GestorTiendas gestorTiendas, GestorClientes gestorClientes) {
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyyMMdd_HHmmss");
         LocalDateTime now = LocalDateTime.now();
-        String filename = "resumen_" + tienda.getNombre() + "_" + dtf.format(now) + ".txt";
 
-        String simulationResults = hacerSimulacion(tienda, gestorClientes);
+        for (Cliente cliente : gestorClientes.getClientes()) {
+            for (Tienda tienda : gestorTiendas.getTiendas()) {
+                Stock stock = tienda.getGestorProductos().buscarProductoSecuencial(cliente.getProductoFavorito().getNombre());
 
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter(filename))) {
-            writer.write(simulationResults);
-        } catch (IOException e) {
-            System.out.println("An error occurred while writing to the file: " + e.getMessage());
+                if (stock != null && stock.getCantidad() > 0) {
+                    String filename = "resumen_" + cliente.getNombre() + "_" + dtf.format(now) + ".txt";
+                    String simulationResults = hacerSimulacion(cliente, tienda);
+
+                    try {
+                        // Crear la carpeta si no existe
+                        File directory = new File(dtf.format(now));
+                        if (! directory.exists()){
+                            directory.mkdir();
+                        }
+
+                        // Escribir el fichero en la carpeta
+                        try (BufferedWriter writer = new BufferedWriter(new FileWriter(directory + "/" + filename))) {
+                            writer.write(simulationResults);
+                        } catch (IOException e) {
+                            System.out.println("An error occurred while writing to the file: " + e.getMessage());
+                        }
+                    } catch (Exception e) {
+                        System.out.println("An error occurred while creating the directory: " + e.getMessage());
+                    }
+
+                    break;
+                }
+            }
         }
     }
 
-    private static String hacerSimulacion(Tienda tienda, GestorClientes gestorClientes) {
+    private static String hacerSimulacion(Cliente cliente, Tienda tienda) {
         StringBuilder simulationResults = new StringBuilder();
 
-        simulationResults.append("═════════════════════════════════════════════════════════\n");
-        simulationResults.append("Resumen de venta de la tienda " + tienda.getNombre() + ":\n");
-        simulationResults.append("═════════════════════════════════════════════════════════\n");
-        simulationResults.append("\n ◀ Clientes ▶ \n");
-        for (Cliente cliente : gestorClientes.getClientes()) {
-            simulationResults.append("\uD83E\uDDCD "+cliente.getNombre() + "\n");
-        }
-        simulationResults.append("\n ◀ Stock Inicial ▶ \n");
+        simulationResults.append("═══════════════════════════════════════════════════════════════════════════════════\n");
+        simulationResults.append("Resumen de compra del cliente " + cliente.getNombre() + " en la tienda " + tienda.getNombre() + "\n");
+        simulationResults.append("═══════════════════════════════════════════════════════════════════════════════════\n");
+
+        simulationResults.append("\nStock inicial:\n");
         for (Stock stock : tienda.getGestorProductos().getStocks()) {
             simulationResults.append(stock.getProducto().getNombre() + " ▸ " + stock.getCantidad() + "\n");
         }
-        simulationResults.append("\n\uD83D\uDCBB ═════════════ INICIO DE LA SIMULACIÓN ═════════════ \uD83D\uDCBB\n");
-        for (Cliente cliente : gestorClientes.getClientes()) {
-            simulationResults.append("\n\uD83E\uDDCD ──────────── Cliente: " + cliente.getNombre() + " ────────────\n");
-            simulationResults.append("Producto favorito: " + cliente.getProductoFavorito().getNombre() + "\n");
-            simulationResults.append("Lista de la compra:\n");
-            for (Producto producto : cliente.getListaCompra()) {
-                simulationResults.append(producto.getNombre() + "\n");
-            }
-            simulationResults.append("\nCompra:\n");
-            for (Producto producto : cliente.getListaCompra()) {
-                Stock stock = tienda.getGestorProductos().buscarProductoSecuencial(producto.getNombre());
-                // si el producto es una verdura, comprobar si está caducada
-                if (producto instanceof Verdura verdura) {
-                    if (verdura.estaCaducada()) {
-                        simulationResults.append("No se puede vender " + producto.getNombre() + " a " + cliente.getNombre() + " porque está caducada\n");
-                        continue;
-                    }
-                }
 
-                if (stock != null) {
-                    if (stock.getCantidad() > 0) {
-                        simulationResults.append("Se ha vendido " + producto.getNombre() + " a " + cliente.getNombre() + "\n");
-                        stock.setCantidad(stock.getCantidad() - 1);
-                    } else {
-                        simulationResults.append("No hay stock de " + producto.getNombre() + " para " + cliente.getNombre() + "\n");
-                    }
-                } else {
-                    simulationResults.append("No hay stock de " + producto.getNombre() + " para " + cliente.getNombre() + "\n");
+        simulationResults.append("\n═════════════════════════════ INICIO DE LA SIMULACIÓN ═════════════════════════════\n");
+
+        simulationResults.append("\n" + tienda.getNombre() + "\n");
+        simulationResults.append("\n\uD83E\uDDCD Cliente: " + cliente.getNombre() + "\n");
+        simulationResults.append("\n\uD83E\uDDFE Lista de la compra:\n");
+        for (Producto producto : cliente.getListaCompra()) {
+            simulationResults.append(" - "+producto.getNombre() + "\n");
+        }
+        simulationResults.append("\n\uD83C\uDF1F Producto favorito: " + cliente.getProductoFavorito().getNombre() + "\n");
+        simulationResults.append("\n\uD83D\uDED2 Compra:\n");
+
+        int nums = 1; // Initialize counter
+
+        // Comprar primero el producto favorito y luego el resto
+        Stock favorito = tienda.getGestorProductos().buscarProductoSecuencial(cliente.getProductoFavorito().getNombre());
+        if (favorito != null && favorito.getCantidad() > 0) {
+            simulationResults.append(nums + ". Se ha vendido " + cliente.getProductoFavorito().getNombre() + " a " + cliente.getNombre() + "\n");
+            favorito.setCantidad(favorito.getCantidad() - 1);
+            nums++;
+        } else {
+            simulationResults.append(nums + ". No hay stock de " + cliente.getProductoFavorito().getNombre() + " para " + cliente.getNombre() + "\n");
+            nums++;
+        }
+
+        // Resto de productos
+        for (Producto producto : cliente.getListaCompra()) {
+            // Saltar el producto favorito porque ya se ha comprado
+            if (producto.equals(cliente.getProductoFavorito())) {
+                continue;
+            }
+
+            Stock stock = tienda.getGestorProductos().buscarProductoSecuencial(producto.getNombre());
+            if (producto instanceof Verdura verdura) {
+                if (verdura.estaCaducada()) {
+                    simulationResults.append(nums + ". No se puede vender " + producto.getNombre() + " a " + cliente.getNombre() + " porque está caducada\n");
+                    nums++;
+                    continue;
                 }
+            }
+
+            if (stock != null) {
+                if (stock.getCantidad() > 0) {
+                    simulationResults.append(nums + ". Se ha vendido " + producto.getNombre() + " a " + cliente.getNombre() + "\n");
+                    stock.setCantidad(stock.getCantidad() - 1);
+                    nums++;
+                } else {
+                    simulationResults.append(nums + ". No hay stock de " + producto.getNombre() + " para " + cliente.getNombre() + "\n");
+                    nums++;
+                }
+            } else {
+                simulationResults.append(nums + ". No hay stock de " + producto.getNombre() + " para " + cliente.getNombre() + "\n");
+                nums++;
             }
         }
-        // Mostrar el stock restante
-        simulationResults.append("\n\uD83D\uDCBB ═════════════ FIN DE LA SIMULACIÓN ═════════════ \uD83D\uDCBB\n");
-        simulationResults.append("\n ◀ Stock restante ▶ \n");
+
+        simulationResults.append("\n═══════════════════════════════ FIN DE LA SIMULACIÓN ══════════════════════════════\n");
+
+        simulationResults.append("\nStock final:\n");
         for (Stock stock : tienda.getGestorProductos().getStocks()) {
             simulationResults.append(stock.getProducto().getNombre() + " ▸ " + stock.getCantidad() + "\n");
         }

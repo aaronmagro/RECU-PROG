@@ -1,10 +1,6 @@
 package local.inventario;
 
-import gestion.GestorFicheros;
 import productos.Producto;
-
-import java.util.ArrayList;
-import java.util.Random;
 
 public class Stock {
 

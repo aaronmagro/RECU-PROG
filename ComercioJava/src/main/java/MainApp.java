@@ -3,39 +3,28 @@ import gestion.GestorFicheros;
 import gestion.GestorProductos;
 import gestion.GestorTiendas;
 import local.inventario.Stock;
-import local.manejo.Cliente;
 import local.manejo.Tienda;
 import productos.Producto;
-import productos.Verdura;
-import productos.Carne;
-import productos.Pescado;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class MainApp {
 
-    public static final String ANSI_BLACK = "\u001B[30m";
-    public static final String ANSI_RED = "\u001B[31m";
     public static final String ANSI_GREEN = "\u001B[32m";
     public static final String ANSI_YELLOW = "\u001B[33m";
     public static final String ANSI_BLUE = "\u001B[34m";
     public static final String ANSI_PURPLE = "\u001B[35m";
     public static final String ANSI_CYAN = "\u001B[36m";
-    public static final String ANSI_WHITE = "\u001B[37m";
     public static final String ANSI_ORANGE = "\u001B[38;5;208m";
     public static final String ANSI_RESET = "\u001B[0m";
     public static final String ANSI_BOLD = "\u001B[1m";
     public static final String ANSI_ITALIC = "\u001B[3m";
     public static final String ANSI_UNDERLINE = "\u001B[4m";
-    public static final String ANSI_BLINK = "\u001B[5m";
-    public static final String ANSI_INVERSE = "\u001b[7m";
     public static final String ANSI_LIGHTGREEN = "\u001b[92m";
     public static final String ANSI_LIGHTPINK = "\u001b[95m";
     public static final String ANSI_LIGHTYELLOW = "\u001b[93m";
     public static final String ANSI_PINK = "\u001b[38;5;206m";
-
 
     public static void main(String[] args) {
         // Crear instancias de gestores y tiendas
@@ -44,13 +33,14 @@ public class MainApp {
         GestorProductos gestorProductos = new GestorProductos();
         GestorTiendas gestorTiendas = new GestorTiendas(gestorProductos);
         GestorClientes gestorClientes = new GestorClientes();
+        GestorFicheros gestorFicheros = new GestorFicheros();
 
         // Cargar datos desde el archivo CSV
         GestorFicheros.leerDatosDesdeCSV("datosAplicacion.csv", productos, gestorTiendas, gestorClientes);
 
         // Menú principal
         Scanner scanner = new Scanner(System.in);
-        System.out.println("───────────────────────────────────────────────────────────────────────────────────────────────────────────────");
+        System.out.println("─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────");
         System.out.println("\n\n\n");
 
         while (true) {
@@ -160,6 +150,7 @@ public class MainApp {
                     } else {
                         System.out.println("No se ha encontrado la tienda.");
                     }
+
                     break;
 
                 case 3:
@@ -200,6 +191,7 @@ public class MainApp {
                     } else {
                         System.out.println("No se ha encontrado la tienda.");
                     }
+
                     break;
 
                 case 4:
@@ -261,14 +253,8 @@ public class MainApp {
                     break;
 
                 case 7:
-                    // Implementar lógica para ejecutar la simulación de venta de una tienda.
-                    tituloTiendas();
-                    gestorTiendas.mostrarNombreTiendas();
-                    System.out.print(ANSI_RESET+"\nEscriba el nombre de la tienda para ejecutar la simulación: ");
-                    String nombreTienda4 = scanner.nextLine();
-                    Tienda tienda4 = gestorTiendas.buscarTienda(nombreTienda4);
-                    System.out.println(ANSI_BOLD+ANSI_LIGHTGREEN+ANSI_UNDERLINE+"\n\uD83C\uDF3D  "+tienda4.getNombre().toUpperCase()+"  \uD83C\uDF57"+ANSI_RESET);
-                    GestorFicheros.exportarSimulacion(tienda4, gestorClientes);
+                    // Implementar lógica para ejecutar simulación de venta
+                    gestorFicheros.exportarSimulacion(gestorTiendas, gestorClientes);
                     System.out.println(ANSI_PINK+"\uD83D\uDCE4 EXPORTANDO SIMULACIÓN... \uD83D\uDCE4"+ANSI_RESET);
                     System.out.println(ANSI_BOLD+ANSI_LIGHTPINK+"\uD83D\uDDF8 SIMULACIÓN EXPORTADA CON ÉXITO \uD83D\uDDF8"+ANSI_RESET);
                     break;
@@ -285,7 +271,10 @@ public class MainApp {
                 default:
                     System.out.println("Opción no válida. Por favor, seleccione una opción válida.");
             }
+
+
         }
+
 
     }
 

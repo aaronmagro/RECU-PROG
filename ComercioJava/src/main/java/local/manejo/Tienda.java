@@ -1,11 +1,6 @@
 package local.manejo;
 
-import gestion.GestorClientes;
-import gestion.GestorFicheros;
 import gestion.GestorProductos;
-import productos.Producto;
-
-import java.util.ArrayList;
 
 public class Tienda {
     private String nombre;
