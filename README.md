@@ -33,9 +33,9 @@ Escribimos el número de la opción que queremos seleccionar.
 
 #### Opción 1: Añadir stock de un producto a una tienda
 
-1. Saldrá la lista de tiendas del comercio para añadir el stock.
-2. Escribimos el nombre de la tienda y el producto a añadir stock, junto con la cantidad deseada.
-3. Recibiremos un mensaje con el stock total del producto modificado.
+Saldrá la lista de tiendas del comercio para añadir el stock.
+Escribimos el nombre de la tienda y el producto a añadir stock, junto con la cantidad deseada.
+Recibiremos un mensaje con el stock total del producto modificado.
 
 #### Opción 2: Eliminar stock de un producto de una tienda
 
