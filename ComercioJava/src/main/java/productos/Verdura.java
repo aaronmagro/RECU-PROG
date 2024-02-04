@@ -3,16 +3,20 @@ package productos;
 import java.time.LocalDate;
 
 public class Verdura extends Producto {
+
+    // Atributos
     private LocalDate fechaRecoleccion;
     private int caducidad;
     private LocalDate fechaExpiracion;
 
+    // Constructor
     public Verdura(String nombre, String nombreCientifico, double kcalorias, double precio, LocalDate fechaRecoleccion, int caducidad) {
         super(nombre, nombreCientifico, kcalorias, precio);
         this.fechaRecoleccion = fechaRecoleccion;
         setCaducidad(caducidad);
     }
 
+    // Getters y Setters
     public LocalDate getFechaRecoleccion() {
         return fechaRecoleccion;
     }
@@ -30,10 +34,17 @@ public class Verdura extends Producto {
         calcularFechaExpiracion();
     }
 
+    /**
+     * Calcula la fecha de expiración a partir de la fecha de recolección y la caducidad.
+     */
     private void calcularFechaExpiracion() {
         fechaExpiracion = fechaRecoleccion.plusDays(caducidad);
     }
 
+    /**
+     * Comprueba si la verdura está caducada.
+     * @return true si la verdura está caducada, false en caso contrario.
+     */
     public boolean estaCaducada() {
         return LocalDate.now().isAfter(fechaExpiracion);
     }

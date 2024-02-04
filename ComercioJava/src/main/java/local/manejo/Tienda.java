@@ -3,6 +3,8 @@ package local.manejo;
 import gestion.GestorProductos;
 
 public class Tienda {
+
+    // Atributos
     private String nombre;
     private String direccion;
     private GestorProductos gestorProductos;
@@ -14,6 +16,7 @@ public class Tienda {
         this.gestorProductos = gestorProductos;
     }
 
+    // Getters y Setters
     public String getNombre() {
         return nombre;
     }

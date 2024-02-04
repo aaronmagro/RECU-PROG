@@ -4,14 +4,17 @@ import productos.Producto;
 
 public class Stock {
 
+    // Atributos
     private Producto producto;
     private int cantidad;
 
+    // Constructor
     public Stock(Producto producto, int cantidad) {
         this.producto = producto;
         this.cantidad = cantidad;
     }
 
+    // Getters y Setters
     public Producto getProducto() {
         return producto;
     }

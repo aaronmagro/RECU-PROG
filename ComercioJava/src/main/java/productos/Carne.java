@@ -1,13 +1,17 @@
 package productos;
 
 public class Carne extends Producto {
+
+    // Atributos
     private String subgrupo;
 
+    // Constructor
     public Carne(String nombre, String nombreCientifico, double kcalorias, double precio, String subgrupo) {
         super(nombre, nombreCientifico, kcalorias, precio);
         this.subgrupo = subgrupo;
     }
 
+    // Getters y Setters
     public String getSubgrupo() {
         return subgrupo;
     }

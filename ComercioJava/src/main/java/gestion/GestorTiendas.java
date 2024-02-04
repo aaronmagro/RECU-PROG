@@ -7,6 +7,8 @@ import productos.Producto;
 import java.util.ArrayList;
 
 public class GestorTiendas {
+
+    // Colores
     public static final String ANSI_GREEN = "\u001B[32m";
     public static final String ANSI_YELLOW = "\u001B[33m";
     public static final String ANSI_BLUE = "\u001B[34m";
@@ -15,23 +17,35 @@ public class GestorTiendas {
     public static final String ANSI_BOLD = "\u001B[1m";
     public static final String ANSI_ITALIC = "\u001B[3m";
 
+    // Atributos
     private ArrayList<Tienda> tiendas;
     private GestorProductos gestorProductos;
 
+    // Constructor
     public GestorTiendas(GestorProductos gestorProductos) {
         this.tiendas = new ArrayList<>();
         this.gestorProductos = gestorProductos;
     }
 
-    public void addTienda(Tienda tienda) {
-        tiendas.add(tienda);
-    }
-
+    // Getters y Setters
     public ArrayList<Tienda> getTiendas() {
         return tiendas;
     }
 
+    // Métodos
 
+    /**
+     * Añade una tienda al gestor.
+     * @param tienda Tienda a añadir.
+     */
+    public void addTienda(Tienda tienda) {
+        tiendas.add(tienda);
+    }
+
+
+    /**
+     * Muestra el nombre de todas las tiendas.
+     */
     public void mostrarNombreTiendas() {
         for (int i = 0; i < tiendas.size(); i++) {
 
@@ -39,6 +53,11 @@ public class GestorTiendas {
         }
     }
 
+    /**
+     * Busca una tienda por su nombre.
+     * @param nombre Nombre de la tienda a buscar.
+     * @return Tienda buscada, o null si no se encuentra.
+     */
     public Tienda buscarTienda(String nombre) {
         for (Tienda tienda : tiendas) {
             if (tienda.getNombre().equals(nombre)) {
@@ -48,6 +67,11 @@ public class GestorTiendas {
         return null;
     }
 
+    /**
+     * Busca un producto en todas las tiendas.
+     * @param nombre Nombre del producto a buscar.
+     * @return Producto buscado, o null si no se encuentra.
+     */
     public Producto buscarProductoEnTienda(String nombre) {
         for (Tienda tienda : tiendas) {
             for (Stock stock : tienda.getGestorProductos().getStocks()) {
@@ -57,22 +81,6 @@ public class GestorTiendas {
             }
         }
         return null;
-    }
-
-    public void addStockATienda(String nombreTienda, Stock stock) {
-        Tienda tienda = buscarTienda(nombreTienda);
-        if (tienda != null) {
-            gestorProductos.addStock(stock);
-        }
-    }
-
-    public void mostrarProductosTienda(String nombreTienda) {
-        Tienda tienda = buscarTienda(nombreTienda);
-        if (tienda != null) {
-            for (Stock stock : tienda.getGestorProductos().getStocks()) {
-                System.out.println(stock.getProducto().getNombre());
-            }
-        }
     }
 
 }

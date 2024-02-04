@@ -1,11 +1,14 @@
 package productos;
 
 public class Producto {
+
+    // Atributos
     private String nombre;
     private String nombreCientifico;
     private double kcalorias;
     private double precio;
 
+    // Constructor
     public Producto(String nombre, String nombreCientifico, double kcalorias, double precio) {
         this.nombre = nombre;
         this.nombreCientifico = nombreCientifico;
@@ -13,6 +16,7 @@ public class Producto {
         this.precio = precio;
     }
 
+    // Getters y Setters
     public String getNombre() {
         return nombre;
     }
@@ -44,7 +48,6 @@ public class Producto {
     public void setPrecio(double precio) {
         this.precio = precio;
     }
-
 
 }
 

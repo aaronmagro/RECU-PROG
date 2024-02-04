@@ -11,6 +11,7 @@ import java.util.Scanner;
 
 public class MainApp {
 
+    // Atributos de colores
     public static final String ANSI_GREEN = "\u001B[32m";
     public static final String ANSI_YELLOW = "\u001B[33m";
     public static final String ANSI_BLUE = "\u001B[34m";
@@ -26,10 +27,12 @@ public class MainApp {
     public static final String ANSI_LIGHTYELLOW = "\u001b[93m";
     public static final String ANSI_PINK = "\u001b[38;5;206m";
 
+    /**
+     * Ejecuta la aplicación.
+     */
     public static void main(String[] args) {
         // Crear instancias de gestores y tiendas
         ArrayList<Producto> productos = new ArrayList<>();
-
         GestorProductos gestorProductos = new GestorProductos();
         GestorTiendas gestorTiendas = new GestorTiendas(gestorProductos);
         GestorClientes gestorClientes = new GestorClientes();
@@ -40,34 +43,11 @@ public class MainApp {
 
         // Menú principal
         Scanner scanner = new Scanner(System.in);
-        System.out.println("─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────");
-        System.out.println("\n\n\n");
+        System.out.println("────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────");
+        System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
 
         while (true) {
-            System.out.println("\n");
-            System.out.println(ANSI_PURPLE+"░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░");
-            System.out.println("░░░░░█████╗░░█████╗░███╗░░░███╗███████╗██████╗░░█████╗░██╗░█████╗░░░░░░░░░░░░░░██╗░█████╗░██╗░░░██╗░█████╗░░░░░");
-            System.out.println("░░░░██╔══██╗██╔══██╗████╗░████║██╔════╝██╔══██╗██╔══██╗██║██╔══██╗░░░░░░░░░░░░░██║██╔══██╗██║░░░██║██╔══██╗░░░░");
-            System.out.println("░░░░██║░░╚═╝██║░░██║██╔████╔██║█████╗░░██████╔╝██║░░╚═╝██║██║░░██║░░░░░░░░░░░░░██║███████║╚██╗░██╔╝███████║░░░░");
-            System.out.println("░░░░██║░░██╗██║░░██║██║╚██╔╝██║██╔══╝░░██╔══██╗██║░░██╗██║██║░░██║░░░░░░░░██╗░░██║██╔══██║░╚████╔╝░██╔══██║░░░░");
-            System.out.println("░░░░╚█████╔╝╚█████╔╝██║░╚═╝░██║███████╗██║░░██║╚█████╔╝██║╚█████╔╝░░░░░░░░╚█████╔╝██║░░██║░░╚██╔╝░░██║░░██║░░░░");
-            System.out.println("░░░░░╚════╝░░╚════╝░╚═╝░░░░░╚═╝╚══════╝╚═╝░░╚═╝░╚════╝░╚═╝░╚════╝░░░░░░░░░░╚════╝░╚═╝░░╚═╝░░░╚═╝░░░╚═╝░░╚═╝░░░░");
-            System.out.println("░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░");
-            System.out.println("░░░░░░░░░░░░░░░░░░░░░░░░░"+ANSI_CYAN+" ╔═════════════════════════════════════════════════════════╗"+ANSI_PURPLE+" ░░░░░░░░░░░░░░░░░░░░░░░░░");
-            System.out.println("░░░░░░░░░░░░░░░░░░░░░░░░░"+ANSI_CYAN+" ║                      "+ANSI_BOLD+"MENÚ PRINCIPAL"+ANSI_RESET+ANSI_CYAN+"                     ║"+ANSI_PURPLE+" ░░░░░░░░░░░░░░░░░░░░░░░░░");
-            System.out.println("░░░░░░░░░░░░░░░░░░░░░░░░░"+ANSI_CYAN+" ╠═════════════════════════════════════════════════════════╣"+ANSI_PURPLE+" ░░░░░░░░░░░░░░░░░░░░░░░░░");
-            System.out.println("░░░░░░░░░░░░░░░░░░░░░░░░░"+ANSI_CYAN+" ║ "+ANSI_BOLD+"1."+ANSI_RESET+" Añadir stock de un producto a una tienda.           "+ANSI_CYAN+" ║"+ANSI_PURPLE+" ░░░░░░░░░░░░░░░░░░░░░░░░░");
-            System.out.println("░░░░░░░░░░░░░░░░░░░░░░░░░"+ANSI_CYAN+" ║ "+ANSI_BOLD+"2."+ANSI_RESET+" Eliminar stock de un producto de una tienda.        "+ANSI_CYAN+" ║"+ANSI_PURPLE+" ░░░░░░░░░░░░░░░░░░░░░░░░░");
-            System.out.println("░░░░░░░░░░░░░░░░░░░░░░░░░"+ANSI_CYAN+" ║ "+ANSI_BOLD+"3."+ANSI_RESET+" Buscar un producto en una tienda (mostrará el stock)."+ANSI_CYAN+"║"+ANSI_PURPLE+" ░░░░░░░░░░░░░░░░░░░░░░░░░");
-            System.out.println("░░░░░░░░░░░░░░░░░░░░░░░░░"+ANSI_CYAN+" ║ "+ANSI_BOLD+"4."+ANSI_RESET+" Mostrar el producto con mayor stock de una tienda.  "+ANSI_CYAN+" ║"+ANSI_PURPLE+" ░░░░░░░░░░░░░░░░░░░░░░░░░");
-            System.out.println("░░░░░░░░░░░░░░░░░░░░░░░░░"+ANSI_CYAN+" ║ "+ANSI_BOLD+"5."+ANSI_RESET+" Mostrar la tienda con mayor valor. (Q x €)          "+ANSI_CYAN+" ║"+ANSI_PURPLE+" ░░░░░░░░░░░░░░░░░░░░░░░░░");
-            System.out.println("░░░░░░░░░░░░░░░░░░░░░░░░░"+ANSI_CYAN+" ║ "+ANSI_BOLD+"6."+ANSI_RESET+" Mostrar información de productos ordenada por stock."+ANSI_CYAN+" ║"+ANSI_PURPLE+" ░░░░░░░░░░░░░░░░░░░░░░░░░");
-            System.out.println("░░░░░░░░░░░░░░░░░░░░░░░░░"+ANSI_CYAN+" ║ "+ANSI_BOLD+"7."+ANSI_RESET+" Ejecutar simulación de venta.                       "+ANSI_CYAN+" ║"+ANSI_PURPLE+" ░░░░░░░░░░░░░░░░░░░░░░░░░");
-            System.out.println("░░░░░░░░░░░░░░░░░░░░░░░░░"+ANSI_CYAN+" ║ "+ANSI_BOLD+"8."+ANSI_RESET+" Salir.                                              "+ANSI_CYAN+" ║"+ANSI_PURPLE+" ░░░░░░░░░░░░░░░░░░░░░░░░░");
-            System.out.println("░░░░░░░░░░░░░░░░░░░░░░░░░"+ANSI_CYAN+" ╠═════════════════════════════════════════════════════════╣"+ANSI_PURPLE+" ░░░░░░░░░░░░░░░░░░░░░░░░░");
-            System.out.println("░░░░░░░░░░░░░░░░░░░░░░░░░"+ANSI_CYAN+" ║ Seleccione una opción:                                  ║"+ANSI_PURPLE+" ░░░░░░░░░░░░░░░░░░░░░░░░░");
-            System.out.println("░░░░░░░░░░░░░░░░░░░░░░░░░"+ANSI_CYAN+" ╚═════════════════════════════════════════════════════════╝"+ANSI_PURPLE+" ░░░░░░░░░░░░░░░░░░░░░░░░░");
-            System.out.println("░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░");
+            menuPrincipal();
             int opcion = scanner.nextInt();
             scanner.nextLine(); // Consumir la nueva línea después de leer el número
             System.out.println("░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░");
@@ -75,7 +55,6 @@ public class MainApp {
             System.out.println("░░░░░░░░░░░░░░░░░░░░░░░░░"+ANSI_CYAN+" ║ "+ANSI_YELLOW+ANSI_BOLD+"Opción seleccionada: "+ANSI_RESET+ANSI_ITALIC+ANSI_YELLOW+opcion+ANSI_CYAN+"                                  ║"+ANSI_PURPLE+" ░░░░░░░░░░░░░░░░░░░░░░░░░");
             System.out.println("░░░░░░░░░░░░░░░░░░░░░░░░░"+ANSI_CYAN+" ╚═════════════════════════════════════════════════════════╝"+ANSI_PURPLE+" ░░░░░░░░░░░░░░░░░░░░░░░░░");
             System.out.println("░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░"+ANSI_RESET);
-
 
             switch (opcion) {
                 case 1:
@@ -260,13 +239,7 @@ public class MainApp {
                     break;
                 case 8:
                     // Implementar lógica para salir de la aplicación
-                    System.out.println(ANSI_PURPLE+"░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░█████╗░██╗░░██╗░█████╗░░█████╗░██╗░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░");
-                    System.out.println("░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░██╔══██╗██║░░██║██╔══██╗██╔══██╗██║░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░");
-                    System.out.println("░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░██║░░╚═╝███████║███████║██║░░██║██║░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░");
-                    System.out.println("░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░██║░░██╗██╔══██║██╔══██║██║░░██║╚═╝░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░");
-                    System.out.println("░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░╚█████╔╝██║░░██║██║░░██║╚█████╔╝██╗░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░");
-                    System.out.println("░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░╚════╝░╚═╝░░╚═╝╚═╝░░╚═╝░╚════╝░╚═╝░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░");
-                    System.out.println("░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░");
+                    chao();
                     scanner.close();
                     System.exit(0);
                 default:
@@ -279,6 +252,39 @@ public class MainApp {
 
     }
 
+    /**
+     * Muestra el menú de la aplicación en la consola.
+     */
+    public static void menuPrincipal() {
+        System.out.println("\n");
+        System.out.println(ANSI_PURPLE+"░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░");
+        System.out.println("░░░░░█████╗░░█████╗░███╗░░░███╗███████╗██████╗░░█████╗░██╗░█████╗░░░░░░░░░░░░░░██╗░█████╗░██╗░░░██╗░█████╗░░░░░");
+        System.out.println("░░░░██╔══██╗██╔══██╗████╗░████║██╔════╝██╔══██╗██╔══██╗██║██╔══██╗░░░░░░░░░░░░░██║██╔══██╗██║░░░██║██╔══██╗░░░░");
+        System.out.println("░░░░██║░░╚═╝██║░░██║██╔████╔██║█████╗░░██████╔╝██║░░╚═╝██║██║░░██║░░░░░░░░░░░░░██║███████║╚██╗░██╔╝███████║░░░░");
+        System.out.println("░░░░██║░░██╗██║░░██║██║╚██╔╝██║██╔══╝░░██╔══██╗██║░░██╗██║██║░░██║░░░░░░░░██╗░░██║██╔══██║░╚████╔╝░██╔══██║░░░░");
+        System.out.println("░░░░╚█████╔╝╚█████╔╝██║░╚═╝░██║███████╗██║░░██║╚█████╔╝██║╚█████╔╝░░░░░░░░╚█████╔╝██║░░██║░░╚██╔╝░░██║░░██║░░░░");
+        System.out.println("░░░░░╚════╝░░╚════╝░╚═╝░░░░░╚═╝╚══════╝╚═╝░░╚═╝░╚════╝░╚═╝░╚════╝░░░░░░░░░░╚════╝░╚═╝░░╚═╝░░░╚═╝░░░╚═╝░░╚═╝░░░░");
+        System.out.println("░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░");
+        System.out.println("░░░░░░░░░░░░░░░░░░░░░░░░░"+ANSI_CYAN+" ╔═════════════════════════════════════════════════════════╗"+ANSI_PURPLE+" ░░░░░░░░░░░░░░░░░░░░░░░░░");
+        System.out.println("░░░░░░░░░░░░░░░░░░░░░░░░░"+ANSI_CYAN+" ║                      "+ANSI_BOLD+"MENÚ PRINCIPAL"+ANSI_RESET+ANSI_CYAN+"                     ║"+ANSI_PURPLE+" ░░░░░░░░░░░░░░░░░░░░░░░░░");
+        System.out.println("░░░░░░░░░░░░░░░░░░░░░░░░░"+ANSI_CYAN+" ╠═════════════════════════════════════════════════════════╣"+ANSI_PURPLE+" ░░░░░░░░░░░░░░░░░░░░░░░░░");
+        System.out.println("░░░░░░░░░░░░░░░░░░░░░░░░░"+ANSI_CYAN+" ║ "+ANSI_BOLD+"1."+ANSI_RESET+" Añadir stock de un producto a una tienda.           "+ANSI_CYAN+" ║"+ANSI_PURPLE+" ░░░░░░░░░░░░░░░░░░░░░░░░░");
+        System.out.println("░░░░░░░░░░░░░░░░░░░░░░░░░"+ANSI_CYAN+" ║ "+ANSI_BOLD+"2."+ANSI_RESET+" Eliminar stock de un producto de una tienda.        "+ANSI_CYAN+" ║"+ANSI_PURPLE+" ░░░░░░░░░░░░░░░░░░░░░░░░░");
+        System.out.println("░░░░░░░░░░░░░░░░░░░░░░░░░"+ANSI_CYAN+" ║ "+ANSI_BOLD+"3."+ANSI_RESET+" Buscar un producto en una tienda (mostrará el stock)."+ANSI_CYAN+"║"+ANSI_PURPLE+" ░░░░░░░░░░░░░░░░░░░░░░░░░");
+        System.out.println("░░░░░░░░░░░░░░░░░░░░░░░░░"+ANSI_CYAN+" ║ "+ANSI_BOLD+"4."+ANSI_RESET+" Mostrar el producto con mayor stock de una tienda.  "+ANSI_CYAN+" ║"+ANSI_PURPLE+" ░░░░░░░░░░░░░░░░░░░░░░░░░");
+        System.out.println("░░░░░░░░░░░░░░░░░░░░░░░░░"+ANSI_CYAN+" ║ "+ANSI_BOLD+"5."+ANSI_RESET+" Mostrar la tienda con mayor valor. (Q x €)          "+ANSI_CYAN+" ║"+ANSI_PURPLE+" ░░░░░░░░░░░░░░░░░░░░░░░░░");
+        System.out.println("░░░░░░░░░░░░░░░░░░░░░░░░░"+ANSI_CYAN+" ║ "+ANSI_BOLD+"6."+ANSI_RESET+" Mostrar información de productos ordenada por stock."+ANSI_CYAN+" ║"+ANSI_PURPLE+" ░░░░░░░░░░░░░░░░░░░░░░░░░");
+        System.out.println("░░░░░░░░░░░░░░░░░░░░░░░░░"+ANSI_CYAN+" ║ "+ANSI_BOLD+"7."+ANSI_RESET+" Ejecutar simulación de venta.                       "+ANSI_CYAN+" ║"+ANSI_PURPLE+" ░░░░░░░░░░░░░░░░░░░░░░░░░");
+        System.out.println("░░░░░░░░░░░░░░░░░░░░░░░░░"+ANSI_CYAN+" ║ "+ANSI_BOLD+"8."+ANSI_RESET+" Salir.                                              "+ANSI_CYAN+" ║"+ANSI_PURPLE+" ░░░░░░░░░░░░░░░░░░░░░░░░░");
+        System.out.println("░░░░░░░░░░░░░░░░░░░░░░░░░"+ANSI_CYAN+" ╠═════════════════════════════════════════════════════════╣"+ANSI_PURPLE+" ░░░░░░░░░░░░░░░░░░░░░░░░░");
+        System.out.println("░░░░░░░░░░░░░░░░░░░░░░░░░"+ANSI_CYAN+" ║ Seleccione una opción:                                  ║"+ANSI_PURPLE+" ░░░░░░░░░░░░░░░░░░░░░░░░░");
+        System.out.println("░░░░░░░░░░░░░░░░░░░░░░░░░"+ANSI_CYAN+" ╚═════════════════════════════════════════════════════════╝"+ANSI_PURPLE+" ░░░░░░░░░░░░░░░░░░░░░░░░░");
+        System.out.println("░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░");
+    }
+
+    /**
+     * Método que imprime el título de las tiendas.
+     */
     public static void tituloTiendas(){
         System.out.println(ANSI_YELLOW+ "\n" +
                 "8888888 8888888888  8 8888 8 8888888888   b.             8 8 888888888o.            .8.            d888888o.   \n" +
@@ -291,6 +297,19 @@ public class MainApp {
                 "      8 8888        8 8888 8 8888         8      `Y8o. `Y8 8 8888        ,88'.8'   `8. `88888.  8b   `8.`8888. \n" +
                 "      8 8888        8 8888 8 8888         8         `Y8o.` 8 8888    ,o88P' .888888888. `88888. `8b.  ;8.`8888 \n" +
                 "      8 8888        8 8888 8 888888888888 8            `Yo 8 888888888P'   .8'       `8. `88888. `Y8888P ,88P' \n" );
+    }
+
+    /**
+     * Método que imprime la despedida de la aplicación.
+     */
+    public static void chao() {
+        System.out.println(ANSI_PURPLE+"░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░█████╗░██╗░░██╗░█████╗░░█████╗░██╗░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░");
+        System.out.println("░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░██╔══██╗██║░░██║██╔══██╗██╔══██╗██║░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░");
+        System.out.println("░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░██║░░╚═╝███████║███████║██║░░██║██║░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░");
+        System.out.println("░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░██║░░██╗██╔══██║██╔══██║██║░░██║╚═╝░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░");
+        System.out.println("░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░╚█████╔╝██║░░██║██║░░██║╚█████╔╝██╗░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░");
+        System.out.println("░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░╚════╝░╚═╝░░╚═╝╚═╝░░╚═╝░╚════╝░╚═╝░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░");
+        System.out.println("░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░"+ ANSI_RESET);
     }
 
 

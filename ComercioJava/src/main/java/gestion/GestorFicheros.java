@@ -16,8 +16,14 @@ import java.util.ArrayList;
 
 public class GestorFicheros {
 
-    ArrayList<Producto> productos;
-
+    // Métodos
+    /**
+     * Lee los datos de un fichero CSV y los almacena en las listas de productos, tiendas y clientes.
+     * @param absolutePath Ruta absoluta del fichero CSV.
+     * @param productos Lista de productos.
+     * @param gestorTiendas Gestor de tiendas.
+     * @param gestorClientes Gestor de clientes.
+     */
     public static void leerDatosDesdeCSV(String absolutePath, ArrayList<Producto> productos, GestorTiendas gestorTiendas, GestorClientes gestorClientes) {
         try (BufferedReader br = new BufferedReader(new FileReader(absolutePath))) {
             String line;
@@ -54,7 +60,7 @@ public class GestorFicheros {
                             int expiration = Integer.parseInt(parts[6].replace("\"", ""));
 
                             Producto producto = null;
-                            switch (group) {
+                            switch (group) { // Crear el producto según el grupo
                                 case "Animal foods":
                                     producto = new Carne(foodName, scientificName, kcal, price, subGroup);
                                     break;
@@ -110,6 +116,12 @@ public class GestorFicheros {
         }
     }
 
+    /**
+     * Divide una línea de un fichero CSV de manera personalizada.
+     * @param line Línea del fichero CSV.
+     * @param currentSection Sección actual del fichero CSV.
+     * @return Array de partes de la línea.
+     */
     private static String[] customSplit(String line, String currentSection) {
         // Dividir la línea de manera predeterminada para obtener el grupo del producto
         String[] preliminaryParts = line.split(",");
@@ -157,6 +169,11 @@ public class GestorFicheros {
         return new String[] {};
     }
 
+    /**
+     * Exporta una simulación de compra a un fichero de texto para cada cliente.
+     * @param gestorTiendas Gestor de tiendas.
+     * @param gestorClientes Gestor de clientes.
+     */
     public void exportarSimulacion(GestorTiendas gestorTiendas, GestorClientes gestorClientes) {
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyyMMdd_HHmmss");
         LocalDateTime now = LocalDateTime.now();
@@ -192,6 +209,12 @@ public class GestorFicheros {
         }
     }
 
+    /**
+     * Realiza una simulación de compra de un cliente en una tienda.
+     * @param cliente Cliente que realiza la compra.
+     * @param tienda Tienda en la que se realiza la compra.
+     * @return Cadena con el resumen de la simulación.
+     */
     private static String hacerSimulacion(Cliente cliente, Tienda tienda) {
         StringBuilder simulationResults = new StringBuilder();
 
@@ -267,10 +290,6 @@ public class GestorFicheros {
         }
 
         return simulationResults.toString();
-    }
-
-    public ArrayList<Producto> getProductos() {
-        return productos;
     }
 
 }

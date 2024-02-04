@@ -1,41 +1,36 @@
 package gestion;
 
 import local.inventario.Stock;
-import productos.Producto;
+import static gestion.GestorTiendas.*; // importar colores de GestorTiendas
 
 import java.util.ArrayList;
 
-import static gestion.GestorTiendas.*;
 
 public class GestorProductos {
 
+    // Atributos
     private ArrayList<Stock> stocks;
 
+    // Constructor
     public GestorProductos() {
         this.stocks = new ArrayList<>();
     }
 
-    public void addStock(Stock stock) {
-        stocks.add(stock);
-    }
-
-    public void delStock(Stock stock) {
-        stocks.remove(stock);
-    }
-
+    // Getters y Setters
     public ArrayList<Stock> getStocks() {
         return stocks;
     }
 
-    public Producto buscarProducto(String nombre) {
-        for (Stock stock : stocks) {
-            if (stock.getProducto().getNombre().equals(nombre)) {
-                return stock.getProducto();
-            }
-        }
-        return null;
+    // Métodos
+    public void addStock(Stock stock) {
+        stocks.add(stock);
     }
 
+    /**
+     * Busca un producto en la lista de stocks de forma secuencial.
+     * @param nombreProductoBusqueda Nombre del producto a buscar.
+     * @return Stock del producto buscado, o null si no se encuentra.
+     */
     public Stock buscarProductoSecuencial(String nombreProductoBusqueda) {
         for (Stock stock : stocks) {
             if (stock.getProducto().getNombre().equals(nombreProductoBusqueda)) {
@@ -45,6 +40,11 @@ public class GestorProductos {
         return null;
     }
 
+    /**
+     * Busca un producto en la lista de stocks de forma binaria.
+     * @param nombreProductoBusqueda Nombre del producto a buscar.
+     * @return Stock del producto buscado, o null si no se encuentra.
+     */
     public Stock buscarProductoBinario(String nombreProductoBusqueda) {
         // Ordenar la lista de stocks alfabéticamente por el nombre del producto
         stocks.sort((stock1, stock2) -> stock1.getProducto().getNombre().compareTo(stock2.getProducto().getNombre()));
@@ -68,7 +68,9 @@ public class GestorProductos {
         return null; // nombre no encontrado
     }
 
-    // ordenar con el algoritmo de la burbuja
+    /**
+     * Ordena la lista de stocks de forma ascendente usando el algoritmo de burbuja.
+     */
     public void ordenarBurbuja() {
         long inicio = System.nanoTime();
         for (int i = 0; i < stocks.size() - 1; i++) {
@@ -89,7 +91,9 @@ public class GestorProductos {
         System.out.println(ANSI_BLUE+"Tiempo de ejecución del algoritmo de burbuja: "+ANSI_RESET +ANSI_ITALIC+ANSI_CYAN+ (fin - inicio)+ANSI_RESET + ANSI_BLUE+" nanosegundos."+ANSI_RESET);
     }
 
-    // ordenar con otro algoritmo a elegir (comparación)
+    /**
+     * Ordena la lista de stocks de forma ascendente usando el algoritmo de comparación.
+     */
     public void ordenarComparacion() {
         long inicio = System.nanoTime();
         stocks.sort((stock1, stock2) -> stock1.getCantidad() - stock2.getCantidad());

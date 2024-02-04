@@ -6,16 +6,19 @@ import java.util.ArrayList;
 
 public class Cliente {
 
+    // Atributos
     private String nombre;
     private Producto productoFavorito;
     private ArrayList<Producto> listaCompra;
 
+    // Constructor
     public Cliente(String nombre, Producto productoFavorito, ArrayList<Producto> listaCompra) {
         this.nombre = nombre;
         this.productoFavorito = productoFavorito;
         this.listaCompra = listaCompra;
     }
 
+    // Getters y Setters
     public String getNombre() {
         return nombre;
     }
@@ -34,14 +37,6 @@ public class Cliente {
 
     public ArrayList<Producto> getListaCompra() {
         return listaCompra;
-    }
-
-    public void agregarProductoListaCompra(Producto producto) {
-        listaCompra.add(producto);
-    }
-
-    public void limpiarListaCompra() {
-        listaCompra.clear();
     }
 
     @Override
